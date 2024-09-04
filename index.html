@@ -26,39 +26,21 @@
             </nav>
 
             <div class="appointmentContainer1">
-                <div class="appointmentContainer">
+                <div class="appointmentContainer" id="highlightDiv">
                     <div class="appointmentContainerHeader">
                         <span>Make an appointment</span>
                     </div>
 
-                    <form class="appointmentContainerDetails">
+                    <form class="appointmentContainerDetails" action="https://formspree.io/f/xdknjggp" method="POST">
                         <input type="hidden" name="_subject" value="New email woooo!">
                         <input class="name" type="text" name="Name" placeholder="Name" required>
                         <input class="email" type="email" name="Email" placeholder="Email" required>
-                        <input class="number" type="number" name="Number" placeholder="Phone number" required>
+                        <input class="number" type="tel" name="Number" placeholder="Phone number" required>
                         <input class="message" type="text" name="Message" placeholder="Write your message here (optional)">
-                        <button type="submit" onclick="SendWhatsApp();">Submit request</button>
+                        <button type="submit">Submit request</button>
                     </form>
                 </div>
             </div>
-
-            <script>
-                function SendWhatsApp() {
-                    var phoneNumber = "+27672750300";
-                    var name = document.querySelector(".name").value;
-                    var email = document.querySelector(".email").value;
-                    var number = document.querySelector(".number").value;
-                    var message = document.querySelector(".message").value;
-
-                    var url = "https://wa.me/" + phoneNumber + "?text="
-                    + "*Name :* " + name + "%0a"
-                    + "*Email :* " + email + "%0a"
-                    + "*Number :* " + number + "%0a"
-                    + "*Message :* " + message + "%0a%0a"
-
-                    window.open(url, "_blank").focus();
-                }
-            </script>
 
             <div class="sloganContainer">
                 <div class="sloganWords">
@@ -174,6 +156,25 @@
                     <div class="section2ContainerLeft2">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium veritatis quaerat debitis quas, laudantium aperiam. Minus iste laborum.
                     </div>
+
+                    <div class="appointmentBtn" id="highlightButton">
+                        <a href="#section0"><button type="button">BOOK<svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#e8eaed"><path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z"/></svg></button></a>
+                    </div>
+
+                    <script>
+                        document.getElementById('highlightButton').addEventListener('click', function() {
+                            setTimeout(function() {
+                                var div = document.getElementById('highlightDiv');
+                                div.classList.add('highlight');
+                                div.classList.remove('unHighlight');
+
+                                setTimeout(function() {
+                                    div.classList.remove('highlight');
+                                    div.classList.add('unHighlight');
+                                }, 700);
+                            }, 1000);
+                        });
+                    </script>
                 </div>
 
                 <div class="imgSlider">
@@ -195,6 +196,8 @@
 
             <div class="section2Container2">
                 <div class="quote-container">
+                    <div class="reviewHeader"><span>REVIEWS</span></div>
+
                     <div class="quote active">"This product has changed my life for the better!" - Jane Doe</div>
                     <div class="quote">"Exceptional service and quality, highly recommend." - John Smith</div>
                     <div class="quote">"I'm incredibly satisfied with my purchase." - Emily Johnson</div>
