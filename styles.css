@@ -52,6 +52,7 @@ nav {
     text-decoration: none;
     border-radius: 3px;
     color: black;
+    transition: all ease 0.5s;
 }
 
 .navLinks a:hover {
@@ -75,8 +76,14 @@ nav {
     margin-right: 1em;
 }
 
-.contactBtn:hover {
+.contactBtn button {
+    background-color: rgba(255, 155, 0, 0.8);
+    transition: all ease 0.3s;
+}
+
+.contactBtn button:hover {
     cursor: pointer;
+    background-color: var(--accentColour);
 }
 
 .contactBtn button {
@@ -117,6 +124,14 @@ nav {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.highlight {
+    animation: highlightDiv 0.5s ease forwards;
+}
+
+.unHighlight {
+    animation: unHighlightDiv 0.5s ease forwards;
+}
+
 .appointmentContainerDetails {
     width: 220px;
     height: calc(40vh - 4em);
@@ -147,20 +162,29 @@ input::placeholder {
 }
 
 .appointmentContainerHeader {
-    margin: 1.5em 0 1.5em 0.5em;
-}
-
-.appointmentName:hover, .appointmentEmail:hover, .appointmentNumber:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    font-family: "Teko", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .appointmentContainerDetails button {
     background-color: rgba(255, 155, 0, 0.8);
     border: none;
+    transition: all ease 0.3s;
 }
 
 .appointmentContainerDetails button:hover {
     background-color: var(--accentColour);
+}
+
+.appointmentContainerDetails input {
+    transition: all ease 0.3s;
+}
+
+.appointmentContainerDetails input:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .sloganContainer {
@@ -336,6 +360,36 @@ iframe {
     padding-top: 4em;
 }
 
+.appointmentBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.appointmentBtn svg {
+    margin-left: 10px;
+    transform: translateY(5px);
+    fill: black;
+}
+
+.appointmentBtn button {
+    width: 120px;
+    position: relative;
+    font-size: 10px;
+    background-color: rgba(255, 155, 0, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px 15px 10px;
+    animation: exitBtnHover 0.3s ease forwards;
+}
+
+.appointmentBtn button:hover {
+    background-color: var(--accentColour);
+    cursor: pointer;
+    animation: btnHover 0.3s ease forwards;
+}
+
 .imgSlider {
     width: 450px;
     height: 350px;
@@ -376,7 +430,7 @@ iframe {
 
 .quote-container {
     width: 300px;
-    height: 100px;
+    height: 160px;
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -385,12 +439,18 @@ iframe {
     border-radius: 10px;
 }
 
+.reviewHeader {
+    font-family: "Teko", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+
 .quote {
     width: 90%;
     font-size: 18px;
     color: #333;
     position: absolute;
-    top: 30px;
+    top: 80px;
     left: 100%;
     transform: translateY(-50%);
     opacity: 0;
@@ -418,8 +478,8 @@ iframe {
 }
 
 .nav-button {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -432,14 +492,14 @@ iframe {
 
 #next {
     position: absolute;
-    top: 65px;
+    top: 125px;
     left: 265px;
 }
 
 #prev {
     position: absolute;
-    top: 65px;
-    left: 235px;
+    top: 125px;
+    left: 230px;
 }
 
 .nav-button svg {
@@ -452,9 +512,8 @@ iframe {
 
 .counter {
     font-size: 16px;
-    color: #555;
     position: absolute;
-    top: 65px;
+    top: 125px;
     left: 10px;
 }
 
@@ -678,6 +737,49 @@ iframe {
     }
 }
 
+@keyframes btnHover {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes exitBtnHover {
+    0% {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes highlightDiv {
+    0% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes unHighlightDiv {
+    0% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
 @media(width > 1000px) {
     .headerBackgroundImg img {
         top: -350px;
@@ -738,6 +840,12 @@ iframe {
     .countersContainer {
         font-size: 12px;
     }
+
+    .appointmentBtn button {
+        width: 80px;
+        font-size: 10px;
+        padding: 8px 10px 15px 10px;
+    }
 }
 
 @media(width < 500px) {
@@ -753,9 +861,8 @@ iframe {
     }
 
     .navLinks {
-        width: 225px;
+        width: 210px;
         height: 30px;
-        
     }
 
     .navLinks a {
