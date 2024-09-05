@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-color: #898989 #4f4f4f;
 }
 
 header {
@@ -105,6 +106,7 @@ nav {
     position: absolute;
     top: -100px;
     z-index: -10;
+    user-select: none;
 }
 
 .appointmentContainer1 {
@@ -262,6 +264,7 @@ iframe {
     height: 400px;
     border-radius: 15px;
     position: relative;
+    user-select: none;
 }
 
 .section1ContainerWordsRight {
@@ -417,6 +420,7 @@ iframe {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    user-select: none;
 }
 
 .section2Container2 {
@@ -584,12 +588,12 @@ iframe {
 
 .list img {
     padding: 0 0.5em;
+    user-select: none;
 }
 
 #section3 {
     width: 100%;
     min-height: 50vh;
-    background-color: rgb(232, 232, 232);
 }
 
 .section3Header {
@@ -640,57 +644,52 @@ iframe {
 
 .footer {
     font-family: "Roboto", sans-serif;
-    background-color: rgb(226, 226, 226);
     width: 100%;
-    height: minmax(250px, 300px);
+    height: 300px;
     border-top: 1px solid rgb(179, 179, 179);
 }
 
 .footer li {
     list-style: none;
-    text-align: center;
     font-size: 12px;
 }
 
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
 .footer1 {
-    display: flex;
-    justify-content: space-between;
     height: 160px;
-}
-
-.footer2
-{
     display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
-}
-
-.footer2 img {
-    width: 70px;
-    height: auto;
+    justify-content: space-around;
 }
 
 .footer3 {
+    height: 60px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 0.5em;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 6em;
 }
 
 .footer3 span {
-    text-align: center;
     font-size: 10px;
+    padding: 0 5px 5px 0;
 }
 
-.footerSubElement
-{
-    width: 100%;
-    margin-top: 1em;
+.footer3 svg {
+    width: 20px;
+    padding: 0 10px 5px 13px;
+    transition: transform 0.2s ease;
 }
 
-.footerSubElement svg
-{
-    fill: var(--accentColor);
+.footer3 svg:hover {
+    transform: scale(150%);
+}
+
+.footerSubElement {
+    margin-top: 3em;
 }
 
 .footerSubElement:first-child {
@@ -698,34 +697,124 @@ iframe {
 }
 
 .footerHeaders {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+    font-family: "Teko", sans-serif;
+    margin-bottom: 1.6em;
     flex-direction: column;
 }
 
 .footerHeaders span {
+    font-size: 15px;
+}
+
+.footerCompanyName {
+    font-family: "Teko", sans-serif;
+    margin-bottom: 1em;
+    flex-direction: column;
     font-size: 20px;
-    font-weight: bold;;
+    font-weight: 600;
+}
+
+.footerAppointmentBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.footerAppointmentBtn svg {
+    margin-left: 10px;
+    transform: translateY(5px);
+    fill: black;
+}
+
+.footerAppointmentBtn button {
+    width: 75px;
+    height: 40px;
+    position: relative;
+    font-size: 10px;
+    background-color: rgba(255, 155, 0, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px 15px 10px;
+    animation: exitBtnHover 0.3s ease forwards;
+}
+
+.footerAppointmentBtn button:hover {
+    background-color: var(--accentColour);
+    cursor: pointer;
+    animation: btnHover 0.3s ease forwards;
 }
 
 .socialsContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 1em;
 }
 
-.socialsContainer svg {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
-    transition: transform 0.2s ease;
+/* .loaderContainer {
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.75s, visibility 0.75s;
 }
 
-.socialsContainer svg:hover {
-    transform: scale(150%);
+.loader {
+    width:50px;
+    aspect-ratio: 1;
+    display: grid;
 }
+
+.loader:before, .loader:after {
+    content: "";
+    grid-area: 1/1;
+    --c:#0000 calc(100%/3),#046D8B 0 calc(2*100%/3),#0000 0;
+    --c1:linear-gradient(90deg,var(--c));
+    --c2:linear-gradient( 0deg,var(--c));
+    background: var(--c1),var(--c2),var(--c1),var(--c2);
+    background-size: 300% 4px,4px 300%;
+    background-repeat: no-repeat;
+    animation: l11 1s infinite linear;
+}
+
+.loader:after {
+    margin: 10px;
+    transform: scaleX(-1);
+    animation-delay: -.25s;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes l11 {
+    0% {
+        background-position: 50%  0,100% 100%,0    100%,0 0
+    }
+
+    25% {
+        background-position: 0    0,100% 50% ,0    100%,0 0
+    }
+
+    50% {
+        background-position: 0    0,100% 0   ,50%  100%,0 0
+    }
+
+    75% {
+        background-position: 0    0,100% 0   ,100% 100%,0 50%
+    }
+
+    75.01% {
+        background-position: 100% 0,100% 0   ,100% 100%,0 50%
+    }
+
+    100% {
+        background-position: 50%  0,100% 0   ,100% 100%,0 100%
+    }
+} */
 
 @keyframes autoRun {
     from {
@@ -791,6 +880,11 @@ iframe {
 
     .sloganWords {
         font-size: 70px;
+    }
+
+    .section1ContainerWordsLeft1 {
+        width: 300px;
+        font-size: 60px;
     }
 
     .section2Container1 {
@@ -904,5 +998,9 @@ iframe {
 
     .socialsContainer svg:hover {
         transform: scale(120%);
+    }
+
+    .footer3 span {
+        font-size: 6px;
     }
 }
