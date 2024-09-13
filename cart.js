@@ -1,5 +1,4 @@
-// import products from "/products.js";
-const products = require('./products');
+import {products} from "./products.js";
 
 const cart = () => {
     let listCartHTML = document.querySelector('.listCart');
