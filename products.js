@@ -1,4 +1,4 @@
-const products = [
+export const products = [
     {
         "id": 1,
         "name":" NIVEA BODY LOTION",
@@ -57,5 +57,4 @@ const products = [
     }
 
 ];
-// export default products;
-module.exports = products;
+export default products;
