@@ -1,4 +1,5 @@
-import products from '/products.js';
+// import products from '/products.js';
+const products = require('./products');
 import cart from './cart.js';
 
 let app = document.getElementById('app');
