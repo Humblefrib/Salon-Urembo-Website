@@ -814,12 +814,38 @@ body.showCart .container {
     transform: translateX(-250px);
 }
 
-.cartTab h1 {
+.cartTabHeader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cartTabHeader button {
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cartTabHeader button:hover {
+    transform: scale(105%);
+}
+
+.cartTabHeader h1 {
     font-family: "Teko", sans-serif;
     padding: 20px;
     margin: 0;
-    font-weight: 200;
-    font-size: 35px;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.emptyCartNotify {
+    position: absolute;
+    top: 45%;
+    left: 135px;
 }
 
 .cartTab .btn {
@@ -1018,6 +1044,10 @@ body.showCart .container {
     display: flex;
     justify-content: space-between;
     margin-top: 1em;
+}
+
+.hidden {
+    display: none;
 }
 
 @keyframes autoRun {
