@@ -9,7 +9,6 @@ let body = document.querySelector('body');
 let products = [];
 let cart = [];
 
-
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
@@ -25,7 +24,7 @@ const addDataToHTML = () => {
             newProduct.dataset.id = product.id;
             newProduct.classList.add('Item');
             newProduct.innerHTML = `
-                <img src="${product.image}" alt="">
+                <img src="${product.image}">
                 <h2>${product.name}</h2>
                 <div class="price">R${product.price}</div>
                 <button class="addCart">Add To Cart</button>
@@ -136,7 +135,7 @@ const changeQuantityCart = (product_id, type) => {
     let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
 
     if(positionItemInCart >= 0){
-        // let info = cart[positionItemInCart];
+        let info = cart[positionItemInCart];
         switch(type) {
             case 'plus':
                 cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
@@ -160,16 +159,16 @@ const changeQuantityCart = (product_id, type) => {
 
 const initApp = () => {
     fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDataToHTML();
+        .then(response => response.json())
+        .then(data => {
+            products = data;
+            addDataToHTML();
 
-        if(localStorage.getItem('cart')) {
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addCartToHTML();
-        }
-    })
+            if(localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+                addCartToHTML();
+            }
+        });
 }
 
 initApp();
@@ -181,3 +180,51 @@ clearCart.addEventListener("click", () => {
     addCartToHTML();
     addCartToMemory();
 })
+
+let selectedProducts = []; // To store the selected product details
+
+// Select elements inside the detailContainer where you will replace the image, name, and price
+let detailImage = document.querySelector('.detailContainer .image img');
+let detailName = document.querySelector('.detailContainer .name');
+let detailPrice = document.querySelector('.detailContainer .price');
+
+listProductHTML.addEventListener('click', (event) => {
+    let clickedElement = event.target;
+
+    // Check if the clicked element is a product (based on class or element type)
+    if (clickedElement.classList.contains('Item') || clickedElement.closest('.Item')) {
+        let productElement = clickedElement.closest('.Item'); // Get the product container
+
+        // Extract details (image, name, and price)
+        let productImage = productElement.querySelector('img').src;
+        let localImagePath = productImage.replace(window.location.origin, ''); // Get local path
+
+        let productName = productElement.querySelector('h2').innerText;
+        let productPrice = productElement.querySelector('.price').innerText;
+
+        // Reset the array and store the new product
+        selectedProducts = [{
+            image: localImagePath,
+            name: productName,
+            price: productPrice
+        }];
+
+        // Log the updated list of selected products
+        console.log(selectedProducts);
+
+        // Update the detailContainer div with the new product details
+        updateDetailContainer();
+    }
+});
+
+// Function to update the detailContainer with the selected product details
+const updateDetailContainer = () => {
+    if (selectedProducts.length > 0) {
+        const product = selectedProducts[0]; // Get the latest selected product
+
+        // Update the image, name, and price in the detailContainer
+        detailImage.src = product.image;
+        detailName.innerText = product.name;
+        detailPrice.innerText = product.price;
+    }
+};
