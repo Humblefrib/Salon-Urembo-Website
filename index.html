@@ -283,7 +283,70 @@
                     </div>
                 </div>
 
+                <div class="detailContainer">
+                    <div class="detail">
+                        <div class="detail1">
+                            <div class="image">
+                                <img src="Images/1.png">
+                            </div>
+                        </div>
+    
+                        <div class="detail2">
+                            <div class="content">
+                                <div class="content1">
+                                    <div class="name">NAME</div>
+                                    <div class="price">PRICE</div>
+                                </div>
+        
+                                <div class="buttons content2">
+                                    <button>Check Out</button>
+                                    <button class="addCart">Add To Cart</button>
+                                </div>
+        
+                                <div class="description">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor iusto nulla labore, consectetur debitis tempore non dolores a ipsam nobis ad nisi facilis cum eveniet, voluptate ratione excepturi numquam? Odit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="listProduct"></div>
+
+
+                <script>
+                    const button = document.querySelector('.listProduct');
+                    const div = document.querySelector('.listProduct');
+                    let isMovedDown = false;
+                
+                    const calculateMoveDistance = () => {
+                        const screenWidth = window.innerWidth;
+                        if(screenWidth < 650) {
+                            return 250;
+                        }
+                        else {
+                            return 360;
+                        }
+                    };
+
+                    button.addEventListener('click', () => {
+                        const moveDistance = calculateMoveDistance();
+                        if(isMovedDown) {
+                            div.style.top = '0px';
+                        }
+                        else {
+                            div.style.top = `${moveDistance}px`;
+                        }
+                        isMovedDown = !isMovedDown;
+                    });
+
+                    window.addEventListener('resize', () => {
+                        if(isMovedDown) {
+                            const moveDistance = calculateMoveDistance();
+                            div.style.top = `${moveDistance}px`;
+                        }
+                    });
+                </script>
             </div>
 
             <div class="cartTab">
