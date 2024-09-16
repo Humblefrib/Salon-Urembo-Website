@@ -107,14 +107,11 @@ document.querySelector('.actualCheckOutBtn').addEventListener('click', function(
     if(cart.length === 0) {
         alert("Your cart is empty.");
         event.preventDefault();
-
-        actualCheckOutBtn.addEventListener('click', () => {
-            nav.classList.toggle("hidden");
-        });
     }
     else {
         updateCartForm();
         body.classList.toggle('showCart');
+        nav.classList.toggle("hidden");
     }
 });
 
