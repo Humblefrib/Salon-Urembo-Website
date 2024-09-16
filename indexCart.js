@@ -112,7 +112,6 @@ document.querySelector('.actualCheckOutBtn').addEventListener('click', function(
     else {
         updateCartForm();
         body.classList.toggle('showCart');
-        nav.classList.toggle("hidden");
     }
 });
 
