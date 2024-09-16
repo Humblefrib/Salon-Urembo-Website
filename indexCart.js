@@ -6,15 +6,28 @@ let clearCart = document.querySelector('.clearCart');
 let iconCart = document.querySelector('.icon-cart');
 let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
+let nav = document.querySelector("nav");
 let products = [];
 let cart = [];
 
+let checkoutBtn = document.querySelector(".detail .buttons button:nth-child(1)");
+let actualCheckOutBtn = document.querySelector(".actualCheckOutBtn");
+
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-})
+    nav.classList.toggle("hidden");
+});
 closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-})
+    nav.classList.toggle("hidden");
+});
+checkoutBtn.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+    nav.classList.toggle("hidden");
+});
+actualCheckOutBtn.addEventListener('click', () => {
+    nav.classList.toggle("hidden");
+});
 
 const addDataToHTML = () => {
     if(products.length > 0) {
@@ -39,9 +52,7 @@ listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
 
     if(positionClick.classList.contains('addCart')) {
-        let id_product = positionClick.parentElement.dataset.id;
-
-        addToCart(id_product);
+        addToCart(positionClick.parentElement.dataset.id);
     }
 })
 
@@ -72,6 +83,31 @@ const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+let cartDataInput = document.querySelector("#cartDataInput");
+
+const updateCartForm = () => {
+    let cartData = [];
+
+    if(cart.length > 0) {
+        cart.forEach(item => {
+            let positionProduct = products.findIndex((value) => value.id == item.product_id);
+            let product = products[positionProduct];
+
+            cartData.push(`Product: ${product.name}, Price: R${product.price}, Quantity: ${item.quantity}`);
+        });
+
+        cartDataInput.value = cartData.join('; ');
+    }
+    else {
+        cartDataInput.value = "";
+    }
+}
+
+document.querySelector('.actualCheckOutBtn').addEventListener('click', function() {
+    updateCartForm();
+    body.classList.toggle('showCart');
+});
+
 const addCartToHTML = () => {
     let totalQuantity = 0;
 
@@ -83,19 +119,20 @@ const addCartToHTML = () => {
             let newItem = document.createElement('div');
             let info = products[positionProduct];
 
-            totalQuantity = totalQuantity +  item.quantity;
+            totalQuantity += item.quantity;
 
             newItem.classList.add('Item');
             newItem.dataset.id = item.product_id;
             listCartHTML.appendChild(newItem);
             newItem.innerHTML = `
-            <div class="image">
+                <div class="image">
                     <img src="${info.image}">
                 </div>
-                <div class="name">
-                ${info.name}
-                </div>
+
+                <div class="name">${info.name}</div>
+
                 <div class="totalPrice">R${info.price * item.quantity}</div>
+
                 <div class="quantity">
                     <span class="minus">-</span>
                     <span>${item.quantity}</span>
@@ -115,6 +152,8 @@ const addCartToHTML = () => {
         emptyCartNotify.classList.remove("hidden");
         clearCart.classList.add("hidden");
     }
+
+    updateCartForm();
 }
 
 listCartHTML.addEventListener('click', (event) => {
@@ -130,12 +169,12 @@ listCartHTML.addEventListener('click', (event) => {
 
         changeQuantityCart(product_id, type);
     }
-})
+});
+
 const changeQuantityCart = (product_id, type) => {
     let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
 
     if(positionItemInCart >= 0){
-        let info = cart[positionItemInCart];
         switch(type) {
             case 'plus':
                 cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
@@ -168,7 +207,8 @@ const initApp = () => {
                 cart = JSON.parse(localStorage.getItem('cart'));
                 addCartToHTML();
             }
-        });
+        })
+        .catch(error => console.error("Failed to load products:", error));
 }
 
 initApp();
@@ -179,52 +219,44 @@ clearCart.addEventListener("click", () => {
 
     addCartToHTML();
     addCartToMemory();
-})
+});
 
-let selectedProducts = []; // To store the selected product details
-
-// Select elements inside the detailContainer where you will replace the image, name, and price
-let detailImage = document.querySelector('.detailContainer .image img');
-let detailName = document.querySelector('.detailContainer .name');
-let detailPrice = document.querySelector('.detailContainer .price');
+let selectedProducts = [];
+let detailImage = document.querySelector('.detail1 img');
+let detailName = document.querySelector('.detail2 .name');
+let detailPrice = document.querySelector('.detail2 .price');
+let detailDescription = document.querySelector('.detail2 .description');
 
 listProductHTML.addEventListener('click', (event) => {
     let clickedElement = event.target;
 
-    // Check if the clicked element is a product (based on class or element type)
-    if (clickedElement.classList.contains('Item') || clickedElement.closest('.Item')) {
-        let productElement = clickedElement.closest('.Item'); // Get the product container
+    if(clickedElement.classList.contains('Item') || clickedElement.closest('.Item')) {
+        let productElement = clickedElement.closest('.Item');
+        let productId = productElement.dataset.id;
+        let selectedProduct = products.find(product => product.id == productId);
 
-        // Extract details (image, name, and price)
-        let productImage = productElement.querySelector('img').src;
-        let localImagePath = productImage.replace(window.location.origin, ''); // Get local path
+        if(selectedProduct) {
+            selectedProducts = [{
+                image: selectedProduct.image,
+                name: selectedProduct.name,
+                price: `R${selectedProduct.price}`,
+                description: selectedProduct.description
+            }];
 
-        let productName = productElement.querySelector('h2').innerText;
-        let productPrice = productElement.querySelector('.price').innerText;
-
-        // Reset the array and store the new product
-        selectedProducts = [{
-            image: localImagePath,
-            name: productName,
-            price: productPrice
-        }];
-
-        // Log the updated list of selected products
-        console.log(selectedProducts);
-
-        // Update the detailContainer div with the new product details
-        updateDetailContainer();
+            detailImage.src = selectedProducts[0].image;
+            detailName.innerText = selectedProducts[0].name;
+            detailPrice.innerText = selectedProducts[0].price;
+            detailDescription.innerText = selectedProducts[0].description;
+        }
     }
 });
 
-// Function to update the detailContainer with the selected product details
-const updateDetailContainer = () => {
-    if (selectedProducts.length > 0) {
-        const product = selectedProducts[0]; // Get the latest selected product
+let detailAddCartBtn = document.querySelector(".detail .buttons button:nth-child(2)");
 
-        // Update the image, name, and price in the detailContainer
-        detailImage.src = product.image;
-        detailName.innerText = product.name;
-        detailPrice.innerText = product.price;
+detailAddCartBtn.addEventListener('click', () => {
+    if (selectedProducts.length > 0) {
+        let product_id = products.find(product => product.name === selectedProducts[0].name).id;
+
+        addToCart(product_id);
     }
-};
+});
