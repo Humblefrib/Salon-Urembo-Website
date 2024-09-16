@@ -107,6 +107,7 @@ document.querySelector('.actualCheckOutBtn').addEventListener('click', function(
     if(cart.length === 0) {
         alert("Your cart is empty.");
         event.preventDefault();
+        nav.classList.toggle("hidden");
     }
     else {
         updateCartForm();
