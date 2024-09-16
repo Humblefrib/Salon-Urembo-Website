@@ -51,7 +51,7 @@ nav {
 }
 
 .navLinks a {
-    padding: 3px 0;
+    padding: 3px 10px;
     margin: 0 0.4em;
     text-decoration: none;
     border-radius: 3px;
@@ -106,7 +106,7 @@ nav {
 
 .headerBackgroundImg img {
     width: 100%;
-    min-height: 100vh;
+    min-height: 150vh;
     object-fit: cover;
     position: absolute;
     top: -100px;
@@ -161,6 +161,15 @@ nav {
     color: black;
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgb(222, 222, 222);
+}
+
+.appointmentContainerDetails button {
+    transition: transform 0.3s ease;
+}
+
+.appointmentContainerDetails button:hover {
+    transform: scale(105%);
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -220,7 +229,7 @@ input::placeholder {
 }
 
 .missionStatement p {
-    font-size: 7px;
+    font-size: 10px;
 }
 
 #section1 {
@@ -261,7 +270,6 @@ input::placeholder {
     height: 400px;
     display: flex;
     align-items: center;
-    margin-top: 1em;
     background-color: #333;
     border-radius: 15px;
     margin-top: 5em;
@@ -359,8 +367,8 @@ iframe {
 
 .section2ContainerLeft1 {
     font-family: "Teko", sans-serif;
-    width: 140px;
-    font-size: 35px;
+    width: 160px;
+    font-size: 40px;
     font-weight: 500;
     color: black;
 }
@@ -560,6 +568,7 @@ iframe {
     border-radius: 8px;
     font-size: 13px;
     font-weight: 500;
+    margin-right: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -624,7 +633,7 @@ iframe {
     user-select: none;
 }
 
-#section3 {
+#section4 {
     width: 100%;
     min-height: 50vh;
 }
@@ -675,13 +684,14 @@ iframe {
     padding: 0 0.5em;
 }
 
-#section6 {
+#section3 {
     min-height: 100vh;
     position: relative;
     margin: auto;
     text-align: center;
     background-color: #ECE1CD;
     padding-bottom: 3em;
+    transition: padding-bottom 0.3s ease;
 }
 
 .container {
@@ -780,7 +790,7 @@ iframe {
 
 .listProduct .Item h2 {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 15px;
     padding: 15px 0;
 }
 
@@ -790,9 +800,10 @@ iframe {
 }
 
 .listProduct .Item button {
+    width: 100px;
     background-color: var(--secondaryAccentColour);
     border: none;
-    padding: 10px 20px;
+    padding: 10px 0;
     margin-top: 10px;
     border-radius: 20px;
     cursor: pointer;
@@ -858,12 +869,17 @@ body.showCart .container {
 .emptyCartNotify {
     position: absolute;
     top: 45%;
-    left: 135px;
+    left: 33%;
 }
 
 .cartTab .btn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button{
+    width: 100%;
+    height: 100%;
 }
 
 .cartTab button {
@@ -885,8 +901,8 @@ body.showCart .container {
     background-color: white;
 }
 
-.listCart .Item img {
-    width: 100%;
+.listCart {
+    overflow: auto;
 }
 
 .listCart .Item {
@@ -902,6 +918,10 @@ body.showCart .container {
     border: none;
 }
 
+.listCart .Item img {
+    width: 100%;
+}
+
 .listCart .quantity span {
     display: inline-block;
     width: 25px;
@@ -911,6 +931,7 @@ body.showCart .container {
     color: black;
     cursor: pointer;
 }
+
 .listCart .quantity span:nth-child(2) {
     background-color: transparent;
     color: white;
@@ -919,10 +940,6 @@ body.showCart .container {
 
 .listCart .Item:nth-child(even) {
     background-color: #eee1;
-}
-
-.listCart {
-    overflow: auto;
 }
 
 .listCart::-webkit-scrollbar {
@@ -986,7 +1003,6 @@ body.showCart .container {
 }
 
 .name {
-    font-size: xx-large;
     padding: 20px 0 0 0;
     margin: 0 0 10px 0;
 }
@@ -1013,6 +1029,7 @@ body.showCart .container {
     border: none;
     border-radius: 20px;
     padding: 15px 20px;
+    margin-top: 10px;
     font-size: large;
     cursor: pointer;
     animation: exitBtnHover 0.3s ease forwards;
@@ -1029,20 +1046,71 @@ body.showCart .container {
     margin-left: 10px;
 }
 
-@media only screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
-    }
+.shoppingContainer1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-/* mobile */
-@media only screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
-    }
+.shoppingContainer {
+    width: 220px;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 999;
 }
 
-/* // */
+.shoppingContainerDetails {
+    width: 220px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.shoppingContainerDetails input {
+    width: 180px;
+    height: 35px;
+    max-height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(222, 222, 222);
+}
+
+.shoppingFormButtons {
+    width: 100%;
+    display: flex;
+}
+
+.shoppingFormButtonsSubmit, .closeShoppingForm {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryAccentColour);
+    cursor: pointer;
+}
+
+.shoppingFormButtonsSubmit {
+    margin-left: 10px;
+    width: 150px;
+}
+
+.closeShoppingForm {
+    width: 70px;
+    margin: 0 10px;
+    background-color: white;
+}
 
 .footer {
     font-family: "Roboto", sans-serif;
@@ -1217,18 +1285,30 @@ body.showCart .container {
 
 @keyframes moveUpDown {
     0% {
-        top: 250px; /* or whatever the initial move distance is */
+        top: 250px;
     }
     50% {
         top: 0px;
     }
     100% {
-        top: 250px; /* or whatever the initial move distance is */
+        top: 250px;
     }
 }
 
 .moving-up-down {
     animation: moveUpDown 0.5s;
+}
+
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media(width > 1000px) {
@@ -1270,9 +1350,17 @@ body.showCart .container {
     .countersContainer {
         font-size: 17px;
     }
+
+    .missionStatement p {
+        font-size: 7px;
+    }
 }
 
 @media(width < 650px) {
+    .navLinks a {
+        padding: 3px 0;
+    }
+
     .section1Container {
         gap: 2em;
     }
@@ -1283,6 +1371,7 @@ body.showCart .container {
 
     .section1ContainerMap {
         height: 400px;
+        margin-top: 0.5em;
     }
 
     .section1ContainerWordsRight {
@@ -1333,6 +1422,15 @@ body.showCart .container {
 
     .description {
         font-size: 9px;
+    }
+
+    .cartTab {
+        width: 100%;
+    }
+
+    .listCart .quantity span {
+        width: 22px;
+        height: 22px;
     }
 }
 
