@@ -103,9 +103,15 @@ const updateCartForm = () => {
     }
 }
 
-document.querySelector('.actualCheckOutBtn').addEventListener('click', function() {
-    updateCartForm();
-    body.classList.toggle('showCart');
+document.querySelector('.actualCheckOutBtn').addEventListener('click', function(event) {
+    if(cart.length === 0) {
+        alert("Your cart is empty.");
+        event.preventDefault();
+    }
+    else {
+        updateCartForm();
+        body.classList.toggle('showCart');
+    }
 });
 
 const addCartToHTML = () => {
