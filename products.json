@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "name":"NIVEA BODY LOTION",
-        "price": 200,
+        "name":"GOLDWELL LOTION",
+        "price": 400,
         "image": "Images/1.png",
-        "description": "This is the Nivea body lotion description."
+        "description": "This is the Eco styling gel description."
     },
     {
         "id": 2,
@@ -54,5 +54,278 @@
         "price": 200,
         "image": "Images/8.png",
         "description": "This is the Eco styling gel description."
-    }
+    },
+    {
+        "id": 9,
+        "name": "SHEA MOISTURE CURL ENHANCING SMOOTHIE",
+        "price": 500,
+        "image": "Images/9.png",
+        "description": "This is the Shea Moisture curl enhancing smoothie description."
+    },
+    {
+        "id": 10,
+        "name": "PALMER'S COCONUT OIL BODY LOTION",
+        "price": 300,
+        "image": "Images/10.png",
+        "description": "This is the Palmer's coconut oil body lotion description."
+    },
+    {
+        "id": 11,
+        "name": "L'OREAL PARIS HAIR MASK",
+        "price": 600,
+        "image": "Images/11.png",
+        "description": "This is the L'Oreal Paris hair mask description."
+    },
+    {
+        "id": 12,
+        "name": "TRESEMME HAIR SPRAY",
+        "price": 400,
+        "image": "Images/12.png",
+        "description": "This is the Tresemme hair spray description."
+    },
+    {
+        "id": 13,
+        "name": "NEUTROGENA FACE WASH",
+        "price": 350,
+        "image": "Images/13.png",
+        "description": "This is the Neutrogena face wash description."
+    },
+    {
+        "id": 14,
+        "name": "AVEENO DAILY MOISTURIZER",
+        "price": 450,
+        "image": "Images/14.png",
+        "description": "This is the Aveeno daily moisturizer description."
+    },
+    {
+        "id": 15,
+        "name": "CETAPHIL MOISTURIZING CREAM",
+        "price": 550,
+        "image": "Images/15.png",
+        "description": "This is the Cetaphil moisturizing cream description."
+    },
+    {
+        "id": 16,
+        "name": "VASELINE PETROLEUM JELLY",
+        "price": 150,
+        "image": "Images/16.png",
+        "description": "This is the Vaseline petroleum jelly description."
+    },
+    {
+        "id": 17,
+        "name": "OLD SPICE BODY WASH",
+        "price": 250,
+        "image": "Images/17.png",
+        "description": "This is the Old Spice body wash description."
+    },
+    {
+        "id": 18,
+        "name": "NIVEA MEN DEODORANT",
+        "price": 300,
+        "image": "Images/18.png",
+        "description": "This is the Nivea men deodorant description."
+    },
+    {
+        "id": 19,
+        "name": "OLAY BODY WASH",
+        "price": 280,
+        "image": "Images/19.png",
+        "description": "This is the Olay body wash description."
+    },
+    {
+        "id": 20,
+        "name": "HEAD & SHOULDERS SHAMPOO",
+        "price": 320,
+        "image": "Images/20.png",
+        "description": "This is the Head & Shoulders shampoo description."
+    },
+    {
+        "id": 21,
+        "name": "JOHNSON'S BABY LOTION",
+        "price": 180,
+        "image": "Images/21.png",
+        "description": "This is the Johnson's baby lotion description."
+    },
+    {
+        "id": 22,
+        "name": "PANTENE HAIR CONDITIONER",
+        "price": 400,
+        "image": "Images/22.png",
+        "description": "This is the Pantene hair conditioner description."
+    },
+    {
+        "id": 23,
+        "name": "CLEAN & CLEAR FACE WASH",
+        "price": 300,
+        "image": "Images/23.png",
+        "description": "This is the Clean & Clear face wash description."
+    },
+    {
+        "id": 24,
+        "name": "BIO OIL SKINCARE OIL",
+        "price": 600,
+        "image": "Images/24.png",
+        "description": "This is the Bio Oil skincare oil description."
+    },
+    {
+        "id": 25,
+        "name": "DOVE BODY LOTION",
+        "price": 350,
+        "image": "Images/25.png",
+        "description": "This is the Dove body lotion description."
+    },
+    {
+        "id": 26,
+        "name": "GARNIER MICELLAR WATER",
+        "price": 250,
+        "image": "Images/26.png",
+        "description": "This is the Garnier micellar water description."
+    },
+    {
+        "id": 27,
+        "name": "JERGENS ULTRA HEALING LOTION",
+        "price": 280,
+        "image": "Images/27.png",
+        "description": "This is the Jergens ultra healing lotion description."
+    },
+    {
+        "id": 28,
+        "name": "NIVEA SOFT MOISTURIZING CREAM",
+        "price": 230,
+        "image": "Images/28.png",
+        "description": "This is the Nivea soft moisturizing cream description."
+    },
+    {
+        "id": 29,
+        "name": "L'OREAL PARIS FACE CREAM",
+        "price": 550,
+        "image": "Images/29.png",
+        "description": "This is the L'Oreal Paris face cream description."
+    },
+    {
+        "id": 30,
+        "name": "OLAY ANTI-AGING CREAM",
+        "price": 750,
+        "image": "Images/30.png",
+        "description": "This is the Olay anti-aging cream description."
+    },
+    {
+        "id": 31,
+        "name": "GILLETTE SHAVING FOAM",
+        "price": 250,
+        "image": "Images/31.png",
+        "description": "This is the Gillette shaving foam description."
+    },
+    {
+        "id": 32,
+        "name": "PALMER'S COCOA BUTTER",
+        "price": 290,
+        "image": "Images/32.png",
+        "description": "This is the Palmer's cocoa butter description."
+    },
+    {
+        "id": 33,
+        "name": "DOVE MEN+CARE BODY WASH",
+        "price": 300,
+        "image": "Images/33.png",
+        "description": "This is the Dove Men+Care body wash description."
+    },
+    {
+        "id": 34,
+        "name": "NIVEA Q10 FIRMING LOTION",
+        "price": 400,
+        "image": "Images/34.png",
+        "description": "This is the Nivea Q10 firming lotion description."
+    },
+    {
+        "id": 35,
+        "name": "E45 MOISTURIZING LOTION",
+        "price": 330,
+        "image": "Images/35.png",
+        "description": "This is the E45 moisturizing lotion description."
+    },
+    {
+        "id": 36,
+        "name": "BIOTHERM BODY MILK",
+        "price": 600,
+        "image": "Images/36.png",
+        "description": "This is the Biotherm body milk description."
+    },
+    {
+        "id": 37,
+        "name": "VICHY THERMAL SPA WATER",
+        "price": 500,
+        "image": "Images/37.png",
+        "description": "This is the Vichy thermal spa water description."
+    },
+    {
+        "id": 38,
+        "name": "CLINIQUE MOISTURE SURGE CREAM",
+        "price": 700,
+        "image": "Images/38.png",
+        "description": "This is the Clinique moisture surge cream description."
+    },
+    {
+        "id": 39,
+        "name": "CETAPHIL GENTLE CLEANSER",
+        "price": 450,
+        "image": "Images/39.png",
+        "description": "This is the Cetaphil gentle cleanser description."
+    },
+    {
+        "id": 40,
+        "name": "BAXTER OF CALIFORNIA SHAVE TONIC",
+        "price": 350,
+        "image": "Images/40.png",
+        "description": "This is the Baxter of California shave tonic description."
+    },
+    {
+        "id": 41,
+        "name": "LAB SERIES FACE WASH",
+        "price": 400,
+        "image": "Images/41.png",
+        "description": "This is the Lab Series face wash description."
+    },
+    {
+        "id": 42,
+        "name": "TOM FORD EXFOLIATING ENERGIZER",
+        "price": 750,
+        "image": "Images/42.png",
+        "description": "This is the Tom Ford exfoliating energizer description."
+    },
+    {
+        "id": 43,
+        "name": "KIEHL'S FACIAL FUEL MOISTURIZER",
+        "price": 600,
+        "image": "Images/43.png",
+        "description": "This is the Kiehl's facial fuel moisturizer description."
+    },
+    {
+        "id": 44,
+        "name": "BIOTHERM AQUAPOWER FACE MOISTURIZER",
+        "price": 700,
+        "image": "Images/44.png",
+        "description": "This is the Biotherm Aquapower face moisturizer description."
+    },
+    {
+        "id": 45,
+        "name": "CLINIQUE FOR MEN FACE WASH",
+        "price": 500,
+        "image": "Images/45.png",
+        "description": "This is the Clinique for men face wash description."
+    },
+    {
+        "id": 46,
+        "name": "JACK BLACK FACE BUFF",
+        "price": 400,
+        "image": "Images/46.png",
+        "description": "This is the Jack Black face buff description."
+    },
+    {
+        "id": 47,
+        "name": "URBAN DECAY ALL NIGHTER SPRAY",
+        "price": 800,
+        "image": "Images/47.png",
+        "description": "This is the Urban Decay all nighter spray description."
+    }    
 ]
