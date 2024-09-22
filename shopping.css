@@ -69,6 +69,18 @@ nav {
 .headerContainer {
     width: 100%;
     text-align: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.headerContainer2 {
+    width: 300px;
+}
+
+.headerContainer2 img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .title {
@@ -717,5 +729,14 @@ body.showCart .container{
 
     .footer3 span {
         font-size: 6px;
+    }
+
+    .headerContainer2 {
+        width: 200px;
+        padding-top: 20px;
+    }
+
+    .cartTab {
+        width: 100%;
     }
 }
