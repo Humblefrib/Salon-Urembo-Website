@@ -276,7 +276,7 @@ input::placeholder {
     align-items: center;
     background-color: #333;
     border-radius: 15px;
-    margin-top: 5em;
+    margin: 5em 0 3.5em 0;
 }
 
 iframe {
@@ -293,6 +293,7 @@ iframe {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 3em;
 }
 
 .section1ContainerWordsRight h1 {
@@ -336,6 +337,10 @@ iframe {
 
 .Number span {
     margin-bottom: 10px;
+}
+
+.Number span:last-child {
+    text-align: center;
 }
 
 .Number2 {
