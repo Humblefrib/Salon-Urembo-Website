@@ -6,8 +6,9 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <script defer src="section2ImageSlider.js"></script>
+        <script defer type="module" src="form.js"></script>
+        <script defer type="module" src="shoppingCart.js"></script>
         <script defer src="bookBtn.js"></script>
-        <script defer src="indexCart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <title>Salon Urembo | Main Page</title>
     </head>
@@ -17,7 +18,7 @@
             <nav>
                 <div class="navLinks">
                     <a href="#section0">Home</a>
-                    <a href="#section3">Shop</a>
+                    <a href="shopping.html">Shop</a>
                     <a href="#section1">About us</a>
                     <a href="#section2">Services</a>
                     <a href="#section4">Experts</a>
@@ -31,7 +32,7 @@
                     </div>
 
                     <form class="appointmentContainerDetails" action="https://formspree.io/f/xdknjggp" method="POST">
-                        <input type="hidden" name="_subject" value="New email woooo!">
+                        <input type="hidden" name="_subject" value="FORM SUBMITION">
                         <input class="appointmentName" type="text" name="Name" placeholder="Name" required>
                         <input class="email" type="email" name="Email" placeholder="Email" required>
                         <input class="number" type="tel" name="Number" placeholder="Phone number" required>
@@ -75,10 +76,29 @@
                         <span>Simba Sandton 2031</span>
                     </div>
 
-                    <div class="number">
+                    <div class="Number">
                         <div class="svgContainer"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg></div>
                         <h1>+27 82 826 4510</h1>
-                        <span>Insert Trading Hours.</span>
+                        <h1 class="Number2">+27 84 677 2911</h1>
+
+                        <span>
+                            Weekdays:
+                            08:30 - 17:30
+                        </span>
+
+                        <span>
+                            Saturdays: 
+                            8:00 - 18:00
+                        </span>
+
+                        <span>
+                            Weekends:
+                            10:00 - 15:00
+                        </span>
+
+                        <span>
+                            (Note that appintmanets made before or after hours will carry additional charges)
+                        </span>
                     </div>
                 </div>
             </div>
@@ -86,17 +106,17 @@
             <div class="countersContainer">
                 <div class="counters">
                     <h1><span data-count="1532">0</span></h1>
-                    <h3>PROJECTS COMPLETED</h3>
+                    <h3>COMPLETED PROJECTS</h3>
                 </div>
 
                 <div class="counters">
-                    <h1><span data-count="2100">0</span>+</h1>
+                    <h1><span data-count="10000">0</span>+</h1>
                     <h3>SATISFIED CLIENTS</h3>
                 </div>
 
                 <div class="counters">
                     <h1><span data-count="20">0</span>+</h1>
-                    <h3>YEARS EXPERIENCE</h3>
+                    <h3>YEARS OF EXPERIENCE</h3>
                 </div>
             </div>
 
@@ -120,7 +140,7 @@
                                     count++;
                                     counter.innerText = count;
 
-                                    setTimeout(UpdateCount, 10);
+                                    setTimeout(UpdateCount, 1);
                                 }
                                 else {
                                     counter.innerText = target;
@@ -141,6 +161,10 @@
                     }
                 });
             </script>
+        </section>
+
+        <section>
+
         </section>
 
         <section id="section2">
@@ -231,7 +255,7 @@
                 <div class="priceList">
                     <div class="priceListHeader">
                         <span>OUR PRICES</span>
-                        <a href="#section3"><button type="button">SEE OUR STORE</button></a>
+                        <a href="shopping.html"><button type="button">SEE OUR STORE</button></a>
                     </div>
 
                     <div class="priceContainer">
@@ -258,17 +282,17 @@
                 </div>
             </div>
 
-            <div class="slider" style="--width: 100px; --height: 110px; --quantity: 4;">
+            <!-- <div class="slider" style="--width: 100px; --height: 110px; --quantity: 4;">
                 <div class="list">
                     <div class="item" style="--position: 1"><img src="Images/Clere logo.png"></div>
                     <div class="item" style="--position: 2"><img src="Images/Dove logo.png"></div>
                     <div class="item" style="--position: 3"><img src="Images/Gillette logo.png"></div>
                     <div class="item" style="--position: 4"><img src="Images/Nivea logo.png"></div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
-        <section id="section3" class="">
+        <!-- <section id="section3" class="">
             <div class="container">
                 <div class="containerHeader">
                     <h1 class="shopHeader">SEE OUR PRODUCTS</h1>
@@ -280,7 +304,7 @@
                     </div>
                 </div>
 
-                <div class="detailContainer">
+                <div class="detailContainer hidden">
                     <div class="detail">
                         <div class="detail1">
                             <div class="image">
@@ -324,12 +348,8 @@
 
                     button.addEventListener('click', () => {
                         if(isMovedDown) {
-                            // div.style.top = '0px';
-                            // section6.style.paddingBottom = '3em';
-
                             setTimeout(() => {
                                 div.style.top = `${calculateMoveDistance()}px`;
-                                // section6.style.paddingBottom = '25em';
                             }, 200);
                         }
                         else {
@@ -344,6 +364,14 @@
                         if(isMovedDown) div.style.top = `${calculateMoveDistance()}px`;
                     });
                 </script>
+
+                <div class="seeMoreProductsBtnContainer">
+                    <a href="shopping.html">
+                        <div class="seeMoreProductsBtn">
+                            <span>SEE OUR STORE</span>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="cartTab">
@@ -363,7 +391,7 @@
                     <a href="#section0"><button class="checkOut actualCheckOutBtn">Check Out</button></a>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section id="section4">
             <div class="section3Header">
@@ -378,8 +406,6 @@
                     <div class="expertImg"><img src=""></div>
                     <div class="expertImg"><img src=""></div>
                 </div>
-
-
             </div>
         </section>
     </body>
@@ -412,8 +438,9 @@
                     <span>Operational</span>
                 </div>
 
-                <li>Insert trading hours</li>
-                <li>Insert trading hours</li>
+                <li>Weekdays: 08:30 - 17:30</li>
+                <li>Saturdays: 8:00 - 18:00</li>
+                <li>Sundays: 10:00 - 15:00</li>
                 <br>
                 <li>+27 84 677 2911</li>
                 <li>+27 82 826 4510</li>
