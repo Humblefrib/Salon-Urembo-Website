@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 :root {
-    /* --accentColour: rgb(255, 155, 0);
-    /* --secondaryAccentColour: rgba(255, 155, 0, 0.8); */
-
     --secondaryAccentColour: rgb(255, 0, 0);
     --accentColour: rgb(255, 0, 0, 0.8);
+
+    --commonFont: "Roboto", sans-serif;
+    --headerFont: "Teko", sans-serif;
 }
 
 * {
@@ -21,7 +21,7 @@ html {
 
 header {
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(135deg, rgb(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
     background-blend-mode: multiply;
     background-size: cover;
     font-family: "Roboto", sans-serif;
@@ -40,6 +40,7 @@ nav {
     width: 440px;
     height: 35px;
     position: fixed;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     border: 2px solid;
@@ -288,7 +289,7 @@ iframe {
 
 .section1ContainerWordsRight {
     width: 200px;
-    height: 500px;
+    height: 510px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -310,6 +311,7 @@ iframe {
     height: 35px;
     border-radius: 7px;
     background-color: var(--accentColour);
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,18 +321,25 @@ iframe {
     fill: black;
 }
 
-.location, .number {
+.location, .Number {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
 }
 
 .location {
     border-bottom: 1px solid;
     margin-bottom: 2em;
     padding-bottom: 2em;
+}
+
+.Number span {
+    margin-bottom: 10px;
+}
+
+.Number2 {
+    margin-top: -10px
 }
 
 .countersContainer {
@@ -686,12 +695,12 @@ iframe {
 }
 
 .expertImg {
-    flex: 1; /* Each image container takes equal width */
+    flex: 1;
     width: calc((100% / 4) - 20px);
     min-width: 130px;
     max-width: 200px;
     height: 270px;
-    overflow: hidden; /* Hide overflow if the image is larger than the container */
+    overflow: hidden;
     padding: 0 0.5em;
 }
 
@@ -701,20 +710,19 @@ iframe {
     min-width: 130px;
     max-width: 190px;
     height: 300px;
-    overflow: hidden; /* Hide overflow if the image is larger than the container */
+    overflow: hidden;
     padding: 0 0.5em;
 }
 
 .expertImg img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    object-fit: cover;
     border-radius: 10px;
 }
 
 #section3 {
     min-height: 100vh;
-    max-height: 150vh;
     position: relative;
     margin: auto;
     text-align: center;
@@ -782,7 +790,6 @@ iframe {
 }
 
 .listProduct .Item img {
-    /* height: 400px; */
     width: 70%;
     filter: drop-shadow(0 50px 20px #0009);
     cursor: pointer;
@@ -808,7 +815,7 @@ iframe {
 }
 
 .listProduct .Item {
-    background-color: #EEEEE6;
+    background-color: white;
     padding: 20px;
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.4s ease;
@@ -1104,7 +1111,6 @@ body.showCart .container {
     flex-direction: column;
 }
 
-
 .shoppingContainerDetails input {
     width: 180px;
     height: 35px;
@@ -1141,6 +1147,34 @@ body.showCart .container {
     width: 70px;
     margin: 0 10px;
     background-color: white;
+}
+
+.seeMoreProductsBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 3em;
+}
+
+.seeMoreProductsBtnContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+.seeMoreProductsBtn {
+    width: 150px;
+    height: 40px;
+    background-color: var(--secondaryAccentColour);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.seeMoreProductsBtn:hover {
+    transform: scale(105%);
 }
 
 .footer {
@@ -1246,7 +1280,6 @@ body.showCart .container {
 }
 
 .footerAppointmentBtn button:hover {
-    /* background-color: var(--accentColour); */
     cursor: pointer;
     animation: btnHover 0.3s ease forwards;
 }
