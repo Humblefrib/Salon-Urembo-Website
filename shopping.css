@@ -401,8 +401,8 @@ body.showCart .container{
 }
 .listCart .item {
     display: grid;
-    grid-template-columns: 70px 150px 50px 1fr;
-    gap: 10px;
+    grid-template-columns: 70px 120px 50px 1fr;
+    /* gap: 10px; */
     text-align: center;
     align-items: center;
     user-select: none;
