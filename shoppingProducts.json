@@ -1,0 +1,378 @@
+[
+    {
+        "id": 1,
+        "name":"GOLDWELL LIGHT DIMENTIONS",
+        "price": 400,
+        "image": "Images/1.png",
+        "description": "This is the Eco styling gel description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 2,
+        "name":"ASSORTED COMBS",
+        "price": 250,
+        "image": "Images/2.png",
+        "description": "This is the Nivea body lotion description for men.",
+        "category": "Combs"
+    },
+    {
+        "id": 3,
+        "name":"HAIR BRUSH",
+        "price": 290,
+        "image": "Images/3.png",
+        "description": "This is the Dove skin care cream description.",
+        "category": "Combs"
+    },
+    {
+        "id": 4,
+        "name":"AFRO COMB",
+        "price": 200,
+        "image": "Images/4.png",
+        "description": "This is the Dove hair shampoo description.",
+        "category": "Combs"
+    },
+    {
+        "id": 5,
+        "name":"HAIR SCISSOR",
+        "price": 300,
+        "image": "Images/5.png",
+        "description": "This is the Gillette shaving razor description.",
+        "category": "Combs"
+    },
+    {
+        "id": 6,
+        "name":"ORS OLIVE OIL",
+        "price": 200,
+        "image": "Images/6.png",
+        "description": "This is the Clere avocado body lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 7,
+        "name":"GOLDWELL TOPCHIC",
+        "price": 200,
+        "image": "Images/7.png",
+        "description": "This is the Soft n' Free hair relaxer description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 8,
+        "name":"GOLDWELL DEVELOPER",
+        "price": 200,
+        "image": "Images/8.png",
+        "description": "This is the Eco styling gel description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 9,
+        "name": "DESIGN ESSENTIALS RESTORE",
+        "price": 500,
+        "image": "Images/9.png",
+        "description": "This is the Shea Moisture curl enhancing smoothie description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 10,
+        "name": "GOLDWELL PERFECT HOLD",
+        "price": 300,
+        "image": "Images/10.png",
+        "description": "This is the Palmer's coconut oil body lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 11,
+        "name": "ORS OLIVE OIL MOUSSE",
+        "price": 600,
+        "image": "Images/11.png",
+        "description": "This is the L'Oreal Paris hair mask description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 12,
+        "name": "CAIVIL JUST FOR KIDS CONDITIONER",
+        "price": 400,
+        "image": "Images/12.png",
+        "description": "This is the Tresemme hair spray description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 13,
+        "name": "MOROCCANOIL DRY SCALP TREATMENT",
+        "price": 350,
+        "image": "Images/13.png",
+        "description": "This is the Neutrogena face wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 14,
+        "name": "YAKÁ PURE SHEA BUTTER",
+        "price": 450,
+        "image": "Images/14.png",
+        "description": "This is the Aveeno daily moisturizer description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 15,
+        "name": "GOLDWELL JUST SMOOTH LOTION",
+        "price": 550,
+        "image": "Images/15.png",
+        "description": "This is the Cetaphil moisturizing cream description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 16,
+        "name": "MIZANI HAIR CONDITIONER",
+        "price": 150,
+        "image": "Images/16.png",
+        "description": "This is the Vaseline petroleum jelly description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 17,
+        "name": "DR NATUREZA CURL ACTIVATOR",
+        "price": 250,
+        "image": "Images/17.png",
+        "description": "This is the Old Spice body wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 18,
+        "name": "GHOST BOND",
+        "price": 300,
+        "image": "Images/18.png",
+        "description": "This is the Nivea men deodorant description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 19,
+        "name": "GLAMOUR STYLING GEL",
+        "price": 280,
+        "image": "Images/19.png",
+        "description": "This is the Olay body wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 20,
+        "name": "REMOVER LACEWIG GLUE",
+        "price": 320,
+        "image": "Images/20.png",
+        "description": "This is the Head & Shoulders shampoo description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 21,
+        "name": "ISOPLUS HAIR HOLDING GEL",
+        "price": 180,
+        "image": "Images/21.png",
+        "description": "This is the Johnson's baby lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 22,
+        "name": "UNIQUE BRAZILIAN MIRACLE TREATMENT FOR CURLS",
+        "price": 400,
+        "image": "Images/22.png",
+        "description": "This is the Pantene hair conditioner description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 23,
+        "name": "IKT WAX STICK",
+        "price": 300,
+        "image": "Images/23.png",
+        "description": "This is the Clean & Clear face wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 24,
+        "name": "ISOPLUS HAIR SPRAY",
+        "price": 600,
+        "image": "Images/24.png",
+        "description": "This is the Bio Oil skincare oil description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 25,
+        "name": "STYLIN' DREDZ MOULDING GEL",
+        "price": 350,
+        "image": "Images/25.png",
+        "description": "This is the Dove body lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 26,
+        "name": "ISOPLUS SPRITZ",
+        "price": 250,
+        "image": "Images/26.png",
+        "description": "This is the Garnier micellar water description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 27,
+        "name": "PARTING COMB",
+        "price": 280,
+        "image": "Images/27.png",
+        "description": "This is the Jergens ultra healing lotion description.",
+        "category": "Combs"
+    },
+    {
+        "id": 28,
+        "name": "NAIROBI STYLING WAX",
+        "price": 230,
+        "image": "Images/28.png",
+        "description": "This is the Nivea soft moisturizing cream description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 29,
+        "name": "YAKÁ SEED OIL",
+        "price": 550,
+        "image": "Images/29.png",
+        "description": "This is the L'Oreal Paris face cream description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 30,
+        "name": "GOLDWELL DUALSENSES RICH REPAIR",
+        "price": 750,
+        "image": "Images/30.png",
+        "description": "This is the Olay anti-aging cream description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 31,
+        "name": "GOLDWELL DUALSENSES JUST SMOOTH",
+        "price": 250,
+        "image": "Images/31.png",
+        "description": "This is the Gillette shaving foam description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 32,
+        "name": "GOLDWELL KERASILK GENTLE SHAMPOO",
+        "price": 290,
+        "image": "Images/32.png",
+        "description": "This is the Palmer's cocoa butter description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 33,
+        "name": "GOLDWELL KERASILK",
+        "price": 300,
+        "image": "Images/33.png",
+        "description": "This is the Dove Men+Care body wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 34,
+        "name": "GOLDWELL DUALSENSES RICH REPAIR SHAMPOO",
+        "price": 400,
+        "image": "Images/34.png",
+        "description": "This is the Nivea Q10 firming lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 35,
+        "name": "GOLDWELL DUALSENSES",
+        "price": 330,
+        "image": "Images/35.png",
+        "description": "This is the E45 moisturizing lotion description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 36,
+        "name": "GOLDWELL STYLESIGN JUST SMOOTH",
+        "price": 600,
+        "image": "Images/36.png",
+        "description": "This is the Biotherm body milk description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 37,
+        "name": "TOP CLASS GUAVA OIL",
+        "price": 500,
+        "image": "Images/37.png",
+        "description": "This is the Vichy thermal spa water description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 38,
+        "name": "TOP CLASS BLACK CASTOR OIL",
+        "price": 700,
+        "image": "Images/38.png",
+        "description": "This is the Clinique moisture surge cream description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 39,
+        "name": "TOP CLASS NOURISHING OIL",
+        "price": 450,
+        "image": "Images/39.png",
+        "description": "This is the Cetaphil gentle cleanser description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 40,
+        "name": "AMLA OIL",
+        "price": 350,
+        "image": "Images/40.png",
+        "description": "This is the Baxter of California shave tonic description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 41,
+        "name": "ARGAN OIL GROWTH OIL",
+        "price": 400,
+        "image": "Images/41.png",
+        "description": "This is the Lab Series face wash description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 42,
+        "name": "AUNT JACKIE'S FRIZZ REBEL COCONUT & SWEET ALMOND",
+        "price": 750,
+        "image": "Images/42.png",
+        "description": "This is the Tom Ford exfoliating energizer description.",
+        "category": "Cosmetics"
+    },
+    {
+        "id": 43,
+        "name": "HAIR BRUSH AND COMB",
+        "price": 600,
+        "image": "Images/43.png",
+        "description": "This is the Kiehl's facial fuel moisturizer description.",
+        "category": "Combs"
+    },
+    {
+        "id": 44,
+        "name": "STANDARD HAIR STRAIGHTENER",
+        "price": 700,
+        "image": "Images/44.png",
+        "description": "This is the Biotherm Aquapower face moisturizer description.",
+        "category": "Electronics"
+    },
+    {
+        "id": 45,
+        "name": "STANDARD HAIR BRUSH",
+        "price": 500,
+        "image": "Images/45.png",
+        "description": "This is the Clinique for men face wash description.",
+        "category": "Combs"
+    },
+    {
+        "id": 46,
+        "name": "STANDARD HAIR STRAIGHTENER",
+        "price": 400,
+        "image": "Images/46.png",
+        "description": "This is the Jack Black face buff description.",
+        "category": "Electronics"
+    },
+    {
+        "id": 47,
+        "name": "STANDARD HAIR BLOWER",
+        "price": 400,
+        "image": "Images/47.png",
+        "description": "This is the Jack Black face buff description.",
+        "category": "Electronics"
+    }
+]
