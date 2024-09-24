@@ -19,6 +19,57 @@ html {
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
+.loadingScreen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    background-color: #eaeaea;
+    z-index: 99999999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loadingScreen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    width: 60px;
+    position: absolute;
+    bottom: 50px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side,#ff0000 90%,#ff000000);
+    background: 
+        var(--_g) 0%   50%,
+        var(--_g) 50%  50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 50%;
+    animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.loadingScreen img {
+    width: 80%;
+    object-fit: cover;
+    transform: translateY(-100px);
+}
+
 header {
     min-height: 100vh;
     background-image: linear-gradient(135deg, rgb(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
@@ -239,6 +290,7 @@ input::placeholder {
 #section1 {
     min-height: 650px;
     background-color: rgb(78, 68, 63);
+    overflow-x: hidden;
 }
 
 .section1Container {
@@ -359,11 +411,83 @@ iframe {
     color: rgb(255, 255, 255);
 }
 
+.aboutUsSection {
+    padding-top: 3em;
+    position: relative;
+    background-color: rgb(215, 162, 77);
+    overflow-x: hidden;
+}
+
+.aboutUsSection svg {
+    position: absolute;
+    top: -1px;
+}
+
+.aboutUsSection div {
+    padding-bottom: 1em;
+}
+
+.aboutUsSection p {
+    font-family: var(--commonFont);
+    padding: 10px;
+}
+
+.aboutUsSection h2 {
+    font-family: var(--headerFont);
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.aboutUsSection img {
+    width: 230px;
+    height: 300px;
+    border: 3px solid white;
+    border-radius: 30px;
+}
+
+.ourStory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ourStory p {
+    max-width: 400px;
+}
+
+.mission {
+    text-align: center;
+}
+
+.meetCeoContainer {
+    margin-top: 2em;
+}
+
+.meetCeo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.meetCeo2 p {
+    max-width: 400px;
+    text-align: end;
+}
+
 #section2 {
     min-height: 100vh;
+    /* position: relative; */
     background-color: #ffeac5;
     overflow: hidden;
     z-index: -10;
+}
+
+#section2 svg {
+    position: absolute;
+    top: -1px;
 }
 
 .section2Container1 {
@@ -377,7 +501,7 @@ iframe {
     width: 340px;
     height: 350px;
     margin: 6em 1em 0 0;
-    padding-left: 1em;
+    padding: 10px 0 10px 1em;
     background-color: #ffeac5;
     z-index: 10;
 }
@@ -410,13 +534,13 @@ iframe {
 }
 
 .appointmentBtn button {
-    width: 120px;
+    width: 100px;
     position: relative;
     font-size: 10px;
     background-color: var(--secondaryAccentColour);
     border: none;
     border-radius: 5px;
-    padding: 8px 10px 15px 10px;
+    padding: 11px 10px 15px 0px;
     animation: exitBtnHover 0.3s ease forwards;
 }
 
@@ -662,6 +786,7 @@ iframe {
 #section4 {
     width: 100%;
     min-height: 50vh;
+    overflow-x: hidden;
 }
 
 .section3Header {
@@ -751,7 +876,7 @@ iframe {
     padding: 20px 0;
 }
 
-.icon-cart {
+.iconCart {
     width: 55px;
     height: 55px;
     display: flex;
@@ -765,15 +890,15 @@ iframe {
     transition: transform 0.3s ease;
 }
 
-.icon-cart:hover {
+.iconCart:hover {
     transform: scale(110%);
 }
 
-.icon-cart svg {
+.iconCart svg {
     width: 25px;
 }
 
-.icon-cart span {
+.iconCart span {
     position: absolute;
     background-color: red;
     width: 25px;
@@ -1167,7 +1292,7 @@ body.showCart .container {
 }
 
 .seeMoreProductsBtn {
-    width: 150px;
+    width: 120px;
     height: 40px;
     background-color: var(--secondaryAccentColour);
     border-radius: 8px;
@@ -1176,6 +1301,7 @@ body.showCart .container {
     align-items: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    animation: jiggle 3s ease infinite;
 }
 
 .seeMoreProductsBtn:hover {
@@ -1187,6 +1313,7 @@ body.showCart .container {
     width: 100%;
     height: 300px;
     border-top: 1px solid rgb(179, 179, 179);
+    overflow-x: hidden;
 }
 
 .footer li {
@@ -1299,6 +1426,26 @@ body.showCart .container {
     display: none;
 }
 
+.HiddenLeft {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.HiddenRight {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
 @keyframes autoRun {
     from {
         left: 100%;
@@ -1329,6 +1476,32 @@ body.showCart .container {
 
     100% {
         transform: translate(0, 0);
+    }
+}
+
+@keyframes jiggle {
+    0% {
+        transform: translateY(0);
+    }
+
+    5% {
+        transform: translateY(-10px);
+    }
+
+    10% {
+        transform: translateY(10px);
+    }
+
+    15% {
+        transform: translateY(-10px);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
 
@@ -1412,6 +1585,12 @@ body.showCart .container {
 
     .swiper {
         transform: translateX(-55%);
+    }
+
+    .loadingScreen img {
+        width: 50%;
+        object-fit: cover;
+        transform: translateY(-100px);
     }
 }
 
