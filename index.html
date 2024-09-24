@@ -4,16 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="Images/Salon urembo logo - fav.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <script defer src="section2ImageSlider.js"></script>
+        <script defer src="animateOnScroll.js"></script>
         <script defer type="module" src="form.js"></script>
         <script defer type="module" src="shoppingCart.js"></script>
+        <script defer src="indexCart.js"></script>
         <script defer src="bookBtn.js"></script>
+        <script defer src="loadingScreen.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <title>Salon Urembo | Main Page</title>
     </head>
 
     <body>
+        <div class="loadingScreen">
+            <div class="loader"></div>
+
+            <img src="Images/Salon urembo logo.png">
+        </div>
+
         <header id="section0">
             <nav>
                 <div class="navLinks">
@@ -25,22 +35,22 @@
                 </div>
             </nav>
 
-            <div class="appointmentContainer1">
-                <div class="appointmentContainer" id="highlightDiv">
-                    <div class="appointmentContainerHeader">
-                        <span>Make an appointment</span>
+                <div class="appointmentContainer1">
+                    <div class="appointmentContainer" id="highlightDiv">
+                        <div class="appointmentContainerHeader">
+                            <span>Make an appointment</span>
+                        </div>
+    
+                        <form class="appointmentContainerDetails" action="https://formspree.io/f/xdknjggp" method="POST">
+                            <input type="hidden" name="_subject" value="FORM SUBMITION">
+                            <input class="appointmentName" type="text" name="Name" placeholder="Name" required>
+                            <input class="email" type="email" name="Email" placeholder="Email" required>
+                            <input class="number" type="tel" name="Number" placeholder="Phone number" required>
+                            <input id="cartDataInput" class="message" type="text" name="Message" placeholder="Write your message here (optional)">
+                            <button type="submit">Submit request</button>
+                        </form>
                     </div>
-
-                    <form class="appointmentContainerDetails" action="https://formspree.io/f/xdknjggp" method="POST">
-                        <input type="hidden" name="_subject" value="FORM SUBMITION">
-                        <input class="appointmentName" type="text" name="Name" placeholder="Name" required>
-                        <input class="email" type="email" name="Email" placeholder="Email" required>
-                        <input class="number" type="tel" name="Number" placeholder="Phone number" required>
-                        <input id="cartDataInput" class="message" type="text" name="Message" placeholder="Write your message here (optional)">
-                        <button type="submit">Submit request</button>
-                    </form>
                 </div>
-            </div>
 
             <div class="sloganContainer">
                 <div class="sloganWords">
@@ -64,7 +74,7 @@
                     <p class="section1ContainerWordsLeft2">Salon Urembo is a territory created purely for those who appreciate the epitome of quality and a premium look. With us, you will look stylish and feel confident in the most discreet way.</p>
                 </div>
 
-                <div class="section1ContainerMap">
+                <div class="section1ContainerMap HiddenLeft">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2394.6630853660554!2d28.068721853075104!3d-26.099856289335627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573386427c3cf%3A0x5351aa41af773f75!2sSalon%20Urembo!5e0!3m2!1sen!2sza!4v1726056958451!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    <div class="iframeCover"></div>
                 </div>
 
@@ -102,74 +112,105 @@
                     </div>
                 </div>
             </div>
-
-            <div class="countersContainer">
-                <div class="counters">
-                    <h1><span data-count="1532">0</span></h1>
-                    <h3>COMPLETED PROJECTS</h3>
-                </div>
-
-                <div class="counters">
-                    <h1><span data-count="10000">0</span>+</h1>
-                    <h3>SATISFIED CLIENTS</h3>
-                </div>
-
-                <div class="counters">
-                    <h1><span data-count="20">0</span>+</h1>
-                    <h3>YEARS OF EXPERIENCE</h3>
-                </div>
-            </div>
-
-            <script>
-                const counters = document.querySelectorAll(".countersContainer span");
-                const container = document.querySelector(".countersContainer");
-
-                let activated = false;
-
-                window.addEventListener("scroll", () => {
-                    if(pageYOffset > container.offsetTop - container.offsetHeight - 500 && activated === false) {
-                        counters.forEach(counter => {
-                            let count = 0;
-
-                            counter.innerText = 0;
-
-                            function UpdateCount() {
-                                const target = parseInt(counter.dataset.count);
-
-                                if(count < target) {
-                                    count++;
-                                    counter.innerText = count;
-
-                                    setTimeout(UpdateCount, 1);
-                                }
-                                else {
-                                    counter.innerText = target;
-                                }
-                            }
-
-                            UpdateCount();
-
-                            activated = true;
-                        });
-                    }
-                    else if(pageYOffset < container.offsetTop - container.offsetHeight - 574 || pageYOffset === 0 && activated === true) {
-                        counters.forEach(counter => {
-                            counter.innerText = 0;
-                        });
-
-                        activated = false;
-                    }
-                });
-            </script>
         </section>
 
         <section>
+            <div class="aboutUsSection">
+                <div class="ourStoryContainer">
+                    <h2>Our Story</h2>
+                    <div class="ourStory">
+                        <div class="ourStory1">
+                            <p>At <strong>Salon Urembo</strong>, we believe that beauty is not just about appearance; it's about feeling good inside and out. Founded in [Founding Year], our salon has transformed into a one-stop sanctuary where clients can indulge in a range of beauty treatments designed to enhance their natural beauty. Our team of passionate professionals is dedicated to providing exceptional service and personalized care.</p>
+                            <p>What started as a simple idea has blossomed into a thriving community hub for beauty enthusiasts, where we celebrate individuality and self-expression.</p>
+                        </div>
 
+                        <div class="ourStory2 HiddenRight">
+                            <img src="">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="mission">
+                    <h2>Our Mission</h2>
+                    <p>Our mission at <strong>Salon Urembo</strong> is to empower our clients by enhancing their beauty and confidence. We strive to create a welcoming environment where everyone feels valued and beautiful. We are committed to using high-quality products and the latest techniques to deliver exceptional results.</p>
+                </div>
+    
+                <div class="meetCeoContainer">
+                    <h2>Meet Our CEO: Lydia</h2>
+                    <div class="meetCeo">
+                        <div class="meetCeo1 HiddenLeft">
+                            <img src="Images/Lydia.jpg">
+                        </div>
+    
+                        <div class="meetCeo2">
+                            <p>Lydia has been at the helm of <strong>Salon Urembo</strong> since its birth. With an multiple deceades of experience under her belt, she brings unparalleled leadership and insight to the company. Lydia is committed to fostering a culture of innovation and growth in the cosmetic industry whilst ensuring that Salon Urembo remains at the forefront of beauty.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="countersContainer">
+                    <div class="counters">
+                        <h1><span data-count="1532">0</span></h1>
+                        <h3>COMPLETED PROJECTS</h3>
+                    </div>
+    
+                    <div class="counters">
+                        <h1><span data-count="10000">0</span>+</h1>
+                        <h3>SATISFIED CLIENTS</h3>
+                    </div>
+    
+                    <div class="counters">
+                        <h1><span data-count="20">0</span>+</h1>
+                        <h3>YEARS OF EXPERIENCE</h3>
+                    </div>
+                </div>
+
+                <script>
+                    const counters = document.querySelectorAll(".countersContainer span");
+                    const container = document.querySelector(".countersContainer");
+    
+                    let activated = false;
+    
+                    window.addEventListener("scroll", () => {
+                        if(pageYOffset > container.offsetTop - container.offsetHeight - 500 && activated === false) {
+                            counters.forEach(counter => {
+                                let count = 0;
+    
+                                counter.innerText = 0;
+    
+                                function UpdateCount() {
+                                    const target = parseInt(counter.dataset.count);
+    
+                                    if(count < target) {
+                                        count++;
+                                        counter.innerText = count;
+    
+                                        setTimeout(UpdateCount, 1);
+                                    }
+                                    else {
+                                        counter.innerText = target;
+                                    }
+                                }
+    
+                                UpdateCount();
+    
+                                activated = true;
+                            });
+                        }
+                        else if(pageYOffset < container.offsetTop - container.offsetHeight - 574 || pageYOffset === 0 && activated === true) {
+                            counters.forEach(counter => {
+                                counter.innerText = 0;
+                            });
+    
+                            activated = false;
+                        }
+                    });
+                </script>
+            </div>
         </section>
 
         <section id="section2">
             <div class="section2Container1">
-
                 <div class="section2ContainerLeft">
                     <div class="section2ContainerLeft1">
                         <span>DISCOVER OUR WORKS</span>
@@ -182,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="imgSlider">
+                <div class="imgSlider HiddenLeft">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="Images/haircut 1.png"></div>
@@ -194,13 +235,12 @@
                         </div>
 
                         <div class="swiper-pagination"></div>
-
                     </div>
                 </div>
             </div>
 
             <div class="section2Container2">
-                <div class="quote-container">
+                <div class="quote-container HiddenLeft">
                     <div class="reviewHeader"><span>REVIEWS</span></div>
 
                     <div class="quote active">"This product has changed my life for the better!" - Jane Doe</div>
@@ -296,7 +336,7 @@
             <div class="container">
                 <div class="containerHeader">
                     <h1 class="shopHeader">SEE OUR PRODUCTS</h1>
-                    <div class="icon-cart">
+                    <div class="iconCart">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
                         </svg>
@@ -401,10 +441,10 @@
     
             <div class="expertsContainer">
                 <div class="expertsImgs">
-                    <div class="expertImg"><img src="Images/Experts image - Lydia.jpg"></div>
-                    <div class="expertImg"><img src=""></div>
-                    <div class="expertImg"><img src=""></div>
-                    <div class="expertImg"><img src=""></div>
+                    <div class="expertImg HiddenRight"><img src="Images/Experts image - Lydia.jpg"></div>
+                    <div class="expertImg HiddenRight"><img src=""></div>
+                    <div class="expertImg HiddenRight"><img src=""></div>
+                    <div class="expertImg HiddenRight"><img src=""></div>
                 </div>
             </div>
         </section>
