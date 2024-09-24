@@ -1,753 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-
-:root {
-    --secondaryAccentColour: rgb(255, 0, 0);
-    --accentColour: rgb(255, 0, 0, 0.8);
-
-    --commonFont: "Roboto", sans-serif;
-    --headerFont: "Teko", sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-nav {
-    font-family: var(--commonFont);
-    Width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ECE1CD;
-}
-
-.navLinks {
-    width: 440px;
-    height: 35px;
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 2px solid white;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    padding: 0 0.5em;
-    z-index: 1000;
-}
-
-.navLinks a {
-    padding: 3px 10px;
-    margin: 0 0.4em;
-    text-decoration: none;
-    border-radius: 3px;
-    color: black;
-    transition: all ease 0.5s;
-}
-
-.navLinks a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-#section7 {
-    width: 100vw;
-    background-color: #ECE1CD;
-    overflow-x: hidden;
-}
-
-.headerContainer {
-    width: 100%;
-    text-align: start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.headerContainer2 {
-    width: 300px;
-}
-
-.headerContainer2 img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.title {
-    font-family: var(--headerFont);
-    font-size: 2.5em;
-}
-
-.titleWords {
-    width: 50%;
-    font-family: var(--commonFont);
-}
-
-.categoryBtnsContainer {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 4em;
-    gap: 20px;
-}
-
-.CategoryBtn {
-    width: 130px;
-    height: 47px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--secondaryAccentColour);
-    border-radius: 50px;
-    animation: exitBtnHover 0.3s ease forwards;
-}
-
-.CategoryBtn:hover {
-    animation: btnHover 0.3s ease forwards;
-}
-
-.price-filter {
-    width: 160px;
-}
-
-.CategoryBtn span {
-    font-family: var(--commonFont);
-    text-align: start;
-    padding: 5px 15px;
-    font-size: 10px;
-}
-
-.CategoryBtn select {
-    margin: 0 11px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--secondaryAccentColour);
-}
-
-.CategoryBtn select:focus {
-    border: none;
-    outline: none;
-}
-
-.sort-buttons {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-#sortName {
-    border: none;
-    margin: 0 7px;
-    background-color: var(--secondaryAccentColour);
-}
-
-.icon-cart {
-    width: 55px;
-    height: 55px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.icon-cart:hover {
-    transform: scale(110%);
-}
-
-.icon-cart svg {
-    width: 30px;
-}
-
-.icon-cart span {
-    font-family: var(--commonFont);
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 65%;
-    right: -10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: white;
-    background-color: red;
-}
-
-.slider {
-    width: 100%;
-    border: 1px solid black;
-    height: var(--height);
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
-    margin-bottom: 4em;
-}
-
-.slider .list {
-    display: flex;
-    width: 100%;
-    min-width: calc(var(--width) * var(--quantity));
-    position: relative;
-}
-
-.slider .list .Item {
-    width: var(--width);
-    height: var(--height);
-    position: absolute;
-    left: 100%;
-    animation: autoRun 15s linear infinite;
-    animation-delay: calc((15s / var(--quantity)) * (var(--position) - 1));
-}
-
-.slider .list .Item img {
-    width: 100%;
-}
-
-.slider:hover .Item {
-    animation-play-state: paused!important; 
-}
-
-.Item {
-    display: flex;
-    align-items: center;
-}
-
-.Item img {
-    padding: 0 0.5em;
-    user-select: none;
-}
-
-#backToTopBtn {
-    width: 55px;
-    height: 55px;
-    display: none;
-    position: fixed;
-    bottom: 70px;
-    left: 20px;
-    font-size: 16px;
-    border: 1px solid;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: white;
-    z-index: 99;
-}
-
-#backToTopBtn svg {
-    fill: black;
-}
-
-.container {
-    width: 100%;
-    margin: auto;
-    max-width: 90vw;
-    text-align: center;
-    padding-top: 10px;
-    transition: transform .5s;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.listProductContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.listProduct {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding-bottom: 2em;
-}
-
-.listProduct .item img {
-    width: 90%;
-    height: 150px;
-    object-fit: cover;
-    filter: drop-shadow(0 50px 20px #0009);
-}
-
-.listProduct .item{
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.listProduct .item:hover {
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
-    transform: scale(105%);
-}
-
-.listProduct .item h2{
-    text-align: center;
-    font-weight: 500;
-    font-size: 15px;
-}
-.listProduct .item .price{
-    text-align: center;
-    letter-spacing: 7px;
-    font-size: small;
-}
-.listProduct .item button{
-    width: 100px;
-    background-color: var(--secondaryAccentColour);
-    border: none;
-    padding: 5px 10px;
-    margin-top: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.listProduct .item button:hover {
-    transform: scale(110%);
-}
-
-.no-products {
-    width: 500px;
-    font-family: var(--commonFont);
-}
-
-.cartTab {
-    font-family: var(--commonFont);
-    width: 400px;
-    background-color: rgba(53, 52, 50, 0.9);
-    color: #eee;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    bottom: 0;
-    display: grid;
-    grid-template-rows: 70px 1fr 70px;
-    transition: 0.3s;
-    z-index: 999;
-}
-
-.cartTabHeader {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.cartTabHeader button {
-    width: 90px;
-    height: 30px;
-    border-radius: 10px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.cartTabHeader button:hover {
-    transform: scale(105%);
-}
-
-.emptyCartNotify {
-    position: absolute;
-    top: 45%;
-    left: 33%;
-}
-
-body.showCart .cartTab{
-    right: 0;
-}
-body.showCart .container{
-    transform: translateX(-250px);
-}
-.cartTab h1{
-    font-family: var(--headerFont);
-    padding: 20px;
-    font-weight: 300;
-    font-size: 3em;
-}
-.cartTab .btn{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-.cartTab button {
-    background-color: var(--accentColour);
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.cartTab .close{
-    background-color: white;
-}
-.listCart .item img{
-    width: 100%;
-}
-.listCart .item {
-    display: grid;
-    grid-template-columns: 70px 120px 50px 1fr;
-    /* gap: 10px; */
-    text-align: center;
-    align-items: center;
-    user-select: none;
-}
-
-.listCart .quantity span{
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border-radius: 50%;
-    color: #555;
-    cursor: pointer;
-}
-.listCart .quantity span:nth-child(2){
-    background-color: transparent;
-    color: #eee;
-    cursor: auto;
-}
-.listCart .item:nth-child(even){
-    background-color: #eee1;
-}
-.listCart{
-    overflow: auto;
-}
-.listCart::-webkit-scrollbar{
-    width: 0;
-}
-
-.footer {
-    font-family: "Roboto", sans-serif;
-    width: 100%;
-    height: 300px;
-    border-top: 1px solid rgb(179, 179, 179);
-}
-
-.footer li {
-    list-style: none;
-    font-size: 12px;
-}
-
-.footer a {
-    text-decoration: none;
-    color: black;
-}
-
-.footer a:hover {
-    color: var(--accentColour);
-}
-
-.footer1 {
-    height: 160px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.footer3 {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-top: 6em;
-}
-
-.footer3 span {
-    font-size: 10px;
-    padding: 0 5px 5px 0;
-}
-
-.footer3 svg {
-    width: 20px;
-    padding: 0 10px 5px 13px;
-    transition: transform 0.2s ease;
-}
-
-.footer3 svg:hover {
-    transform: scale(150%);
-}
-
-.footerSubElement {
-    margin-top: 3em;
-}
-
-.footerSubElement:first-child {
-    border: none;
-}
-
-.footerHeaders {
-    font-family: "Teko", sans-serif;
-    margin-bottom: 1.6em;
-    flex-direction: column;
-}
-
-.footerHeaders span {
-    font-size: 15px;
-}
-
-.footerCompanyName {
-    font-family: "Teko", sans-serif;
-    margin-bottom: 1em;
-    flex-direction: column;
-    font-size: 25px;
-    font-weight: 600;
-    color: var(--accentColour);
-}
-
-.footerAppointmentBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
-}
-
-.footerAppointmentBtn svg {
-    margin-left: 10px;
-    transform: translateY(5px);
-    fill: black;
-}
-
-.footerAppointmentBtn button {
-    width: 75px;
-    height: 40px;
-    position: relative;
-    font-size: 10px;
-    background-color: var(--secondaryAccentColour);
-    border: none;
-    border-radius: 5px;
-    padding: 8px 10px 15px 10px;
-    animation: exitBtnHover 0.3s ease forwards;
-}
-
-.footerAppointmentBtn button:hover {
-    cursor: pointer;
-    animation: btnHover 0.3s ease forwards;
-}
-
-.socialsContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes autoRun {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: calc(var(--width) * -1);
-    }
-}
-
-@keyframes btnHover {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-5px, -5px);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    }
-}
-
-@keyframes exitBtnHover {
-    0% {
-        transform: translate(-5px, -5px);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes highlightDiv {
-    0% {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    100% {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-}
-
-@keyframes unHighlightDiv {
-    0% {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    100% {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(width > 1000px) {
-    .title {
-        font-size: 5em;
-        font-weight: 500;
-    }
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer type="module" src="shoppingCart.js"></script>
+        <script defer type="module" src="form.js"></script>
+        <script defer src="animateOnScroll.js"></script>
+        <script defer src="loadingScreen.js"></script>
+        <link rel="stylesheet" href="shopping.css">
+        <link rel="shortcut icon" href="Images/Salon urembo logo - fav.png" type="image/x-icon">
+        <title>Salon Urembo | Shopping</title>
+    </head>
+
+    <body class="">
+        <div class="loadingScreen">
+            <div class="loader"></div>
+
+            <img src="Images/Salon urembo logo.png">
+        </div>
+
+        <nav>
+            <div class="navLinks">
+                <a href="index.html">Home</a>
+                <a href="shopping.html">Shop</a>
+                <a href="index.html#section1">About us</a>
+                <a href="index.html#section2">Services</a>
+                <a href="index.html#section4">Experts</a>
+            </div>
+        </nav>
+
+        <section id="section7">
+            <div class="container">
+                <header>
+                    <div class="headerContainer">
+                        <div class="headerContainer1">
+                            <div class="title">SEE OUR PRODUCTS</div>
+                            <div class="titleWords">Looking for a new look? Browse through our extensive range of beauty products and discover the "you" look!</div>
+                        </div>
+                    
+                        <div class="headerContainer2 HiddenRight">
+                            <img src="Images/shopping hair design.png">
+                        </div>
+                    </div>
+                </header>
+
+                <div class="categoryBtnsContainer">
+                    <div class="category-filter CategoryBtn HiddenRight">
+                        <span>Category</span>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="Combs">Combs</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Cosmetics">Cosmetics</option>
+                        </select>
+                    </div>
+
+                    <div class="price-filter CategoryBtn HiddenRight">
+                        <span>Price</span>
+                        <select id="priceFilter">
+                            <option value="all">All Prices</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="0-50">From R0 - R50</option>
+                            <option value="50-100">From R50 - R100</option>
+                            <option value="100-200">From R100 - R200</option>
+                            <option value="200">R200+</option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="sort-buttons CategoryBtn">
+                        <button id="sortName">Sort by Name</button>
+                    </div> -->
+
+                    <div class="sort-name CategoryBtn HiddenRight">
+                        <span>Sort by Name</span>
+                        <select id="sortName">
+                            <option value="none">No Sorting</option>
+                            <option value="name-asc">A to Z</option>
+                            <option value="name-desc">Z to A</option>
+                        </select>
+                    </div>
+
+                    <div class="icon-cart" title="Cart">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                        </svg>
+
+                        <span>0</span>
+                    </div>
+                </div>
+
+                <div class="slider" style="--width: 100px; --height: 110px; --quantity: 9;">
+                    <div class="list">
+                        <div class="Item" style="--position: 1"><img src="Images/Caivil logo.png"></div>
+                        <div class="Item" style="--position: 2"><img src="Images/Design essentials logo.png"></div>
+                        <div class="Item" style="--position: 3"><img src="Images/Goldwell logo.png"></div>
+                        <div class="Item" style="--position: 4"><img src="Images/Isoplus logo.png"></div>
+                        <div class="Item" style="--position: 5"><img src="Images/Mizani logo.png"></div>
+                        <div class="Item" style="--position: 6"><img src="Images/Nairobi logo.png"></div>
+                        <div class="Item" style="--position: 7"><img src="Images/Ors logo.png"></div>
+                        <div class="Item" style="--position: 8"><img src="Images/Stylin logo.png"></div>
+                        <div class="Item" style="--position: 9"><img src="Images/Top class logo.png"></div>
+                    </div>
+                </div>
     
-    .titleWords {
-        width: 400px;
-        font-size: 1.1em;
-    }
-}
+                <div class="listProductContainer">
+                    <div class="listProduct"></div>
+                </div>
+            </div>
+            <div class="cartTab">
+                <div class="cartTabHeader">
+                    <h1>Your Shopping Cart</h1>
+                    <button class="clearCart">Clear</button>
+                </div>
 
-@media(width < 800px) {
-    .cartTab h1{
-        width: 220px;
-        font-weight: 300;
-        font-size: 2.5em;
-    }
-}
-
-@media(width < 650px) {
-    .navLinks a {
-        padding: 3px 0;
-    }
-
-    .listCart .quantity span {
-        width: 22px;
-        height: 22px;
-    }
-
-    .listProduct .item{
-        height: 250px;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .CategoryBtn {
-        width: 120px;
-        height: 40px;
-    }
-
-    .price-filter {
-        width: 145px;
-    }
-
-    .CategoryBtn span {
-        font-size: 9px;
-    }
-
-    .CategoryBtn select {
-        font-size: 12px;
-    }
-
-    .CategoryBtn button {
-        font-size: 12px;
-    }
-
-    .icon-cart {
-        width: 50px;
-        height: 50px;
-    }
+                <div class="emptyCartNotify .hidden">
+                    <span>Your cart is empty...</span>
+                </div>
     
-    .icon-cart span {
-        width: 23px;
-        height: 23px;
-    }
+                <div class="listCart"></div>
+                
+                <div class="btn">
+                    <button class="close">CLOSE</button>
+                    <button class="checkOut">CHECK OUT</button>
+                </div>
+            </div>
 
-    .icon-cart svg {
-        width: 25px;
-    }
+            <button id="backToTopBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-760v-80h640v80H160Zm280 640v-408L336-424l-56-56 200-200 200 200-56 56-104-104v408h-80Z"/></svg></button>
 
-    #backToTopBtn {
-        padding: 7px;
-        font-size: 11px;
-    }
+            <script>
+                let backToTopBtn = document.getElementById("backToTopBtn");
 
-    .listProduct .item h2{
-        text-align: center;
-        font-weight: 500;
-        font-size: 12px;
-    }
-}
+                window.onscroll = function() { scrollFunction(); };
 
-@media(width < 500px) {
-    .navLinks {
-        width: 210px;
-        height: 30px;
-    }
+                function scrollFunction() {
+                    if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        backToTopBtn.style.display = "block";
+                    }
+                    else {
+                        backToTopBtn.style.display = "none";
+                    }
+                }
 
-    .navLinks a {
-        font-size: 10px;
-        left: 0;
-        transform: none;
-    }
+                backToTopBtn.onclick = function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                };
+            </script>
+        </section>
 
-    .title {
-        width: 350px;
-        font-size: 3.3em;
-        font-weight: 500;
-    }
+        <footer id="section5" class="footer">
+            <div class="footer1">
+                <div class="footerSubElement">
+                    <div class="footerCompanyName">
+                        <span>SALON UREMBO</span>
+                    </div>
+                    <li>156 Linden road</li>
+                    <li>Simba Sandton 2031</li>
+                    <li>Gauteng</li>
+                </div>
     
-    .titleWords {
-        width: 300px;
-        font-size: 0.7em;
-    }
-
-    .footer li {
-        font-size: 10px;
-    }
-
-    .socialsContainer svg {
-        width: 12x;
-        height: 12px;
-    }
-
-    .socialsContainer svg:hover {
-        transform: scale(120%);
-    }
-
-    .footer3 span {
-        font-size: 6px;
-    }
-
-    .headerContainer2 {
-        width: 200px;
-        padding-top: 20px;
-    }
-
-    .cartTab {
-        width: 100%;
-    }
-}
+                <div class="footerSubElement">
+                    <div class="footerHeaders">
+                        <span>Menu</span>
+                    </div>
+    
+                    <li><a href="index.html#section0">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a href="index.html#section1">About us</a></li>
+                    <li><a href="index.html#section2">Services</a></li>
+                    <li><a href="index.html#section4">Experts</a></li>
+                </div>
+    
+                <div class="footerSubElement">
+                    <div class="footerHeaders">
+                        <span>Operational</span>
+                    </div>
+    
+                    <li>Weekdays: 08:30 - 17:30</li>
+                    <li>Saturdays: 8:00 - 18:00</li>
+                    <li>Sundays: 10:00 - 15:00</li>
+                    <br>
+                    <li>+27 84 677 2911</li>
+                    <li>+27 82 826 4510</li>
+                    <li>salonurembo1@gmail.com</li>
+    
+                    <div class="footerAppointmentBtn highlightButton">
+                        <a href="index.html#section0"><button type="button">BOOK<svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#e8eaed"><path d="m216-160-56-56 464-464H360v-80h400v400h-80v-264L216-160Z"/></svg></button></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer3">
+                <div class="socialsContainer">
+                    <a href="https://www.instagram.com/_salonurembo?igsh=NmxyNWd5dGFoYWo=" target="_blank"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+                        <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+                        </svg>
+                    </a>
+    
+                    <a href="https://www.facebook.com/SalonUrembo?mibextid=ZbWKwL" target="_blank"><svg width="24px" height="24px" viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="#333" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#000000">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#176]"></path>
+                                </g></g></g></svg>
+                    </a>
+                </div>
+    
+                <span class="copyright">2024 Copyright © SALON UREMBO. All Rights Reserved.</span>
+            </div>
+        </footer>
+    </body>
+</html>
