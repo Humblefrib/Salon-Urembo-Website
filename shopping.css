@@ -47,7 +47,7 @@ body.no-scroll {
 .loader {
     width: 60px;
     position: absolute;
-    bottom: 90px;
+    bottom: 50px;
     aspect-ratio: 2;
     --_g: no-repeat radial-gradient(circle closest-side,#ff0000 90%,#ff000000);
     background: 
@@ -73,33 +73,56 @@ body.no-scroll {
 
 nav {
     font-family: var(--commonFont);
-    Width: 100%;
+    width: 100%;
     height: 100px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
     align-items: center;
-    background-color: #ECE1CD;
+    position: fixed;
+    text-align: center;
+    z-index: 1000;
+    padding-top: 5px;
+}
+
+nav div:first-child a {
+    text-decoration: none;
+}
+
+nav div span {
+    font-family: var(--headerFont);
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+nav div button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryAccentColour);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+nav div button:hover {
+    transform: scale(108%);
 }
 
 .navLinks {
-    width: 440px;
-    height: 35px;
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 30px;
     border: 2px solid white;
     border-radius: 5px;
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
-    padding: 0 0.5em;
-    z-index: 1000;
 }
 
 .navLinks a {
+    font-size: 0.8em;
     padding: 3px 10px;
     margin: 0 0.4em;
     text-decoration: none;
@@ -110,6 +133,64 @@ nav {
 
 .navLinks a:hover {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navSvg {
+    display: none;
+    cursor: pointer;
+}
+
+nav svg {
+    fill: white;
+}
+
+.dropDownMenu {
+    font-family: var(--commonFont);
+    width: 100%;
+    height: 200px;
+    display: none;
+    position: fixed;
+    top: -280px;
+    text-align: center;
+    padding-top: 80px;
+    background-color: rgba(205, 205, 205, 0.5);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    z-index: 999;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 35%;
+}
+
+.dropDownMenu div {
+    position: relative;
+}
+
+.dropDownMenu a {
+    padding: 5px 30px;
+    text-decoration: none;
+    border-radius: 7px;
+    color: black;
+}
+
+.underLine {
+    width: 70px;
+    height: 1px;
+    position: absolute;
+    left: calc(50% - 35px);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    background-color: black;
+}
+
+.dropDownMenu div:hover .underLine{
+    transform: scaleX(1);
+}
+
+.dropDownMenu.active {
+    top: 0px;
+    opacity: 1;
 }
 
 #section7 {
@@ -124,6 +205,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 4em;
 }
 
 .headerContainer2 {
@@ -138,6 +220,7 @@ nav {
 .title {
     font-family: var(--headerFont);
     font-size: 2.5em;
+    font-weight: 600;
 }
 
 .titleWords {
@@ -340,7 +423,7 @@ header {
 }
 
 .listProduct .item{
-    background-color: white;
+    background-color: rgb(235, 235, 235);
     padding: 20px;
     border-radius: 20px;
     position: relative;
@@ -396,7 +479,7 @@ header {
     bottom: 0;
     display: grid;
     grid-template-rows: 70px 1fr 70px;
-    transition: 0.3s;
+    transition: 0.5s ease;
     z-index: 999;
 }
 
@@ -427,12 +510,14 @@ header {
     left: 33%;
 }
 
-body.showCart .cartTab{
+body.showCart .cartTab {
     right: 0;
 }
-body.showCart .container{
+
+body.showCart .container {
     transform: translateX(-250px);
 }
+
 .cartTab h1{
     font-family: var(--headerFont);
     padding: 20px;
@@ -488,117 +573,115 @@ body.showCart .container{
     width: 0;
 }
 
-.footer {
-    font-family: "Roboto", sans-serif;
+footer {
+    font-family: var(--commonFont);
     width: 100%;
-    height: 300px;
-    border-top: 1px solid rgb(179, 179, 179);
-}
-
-.footer li {
-    list-style: none;
-    font-size: 12px;
-}
-
-.footer a {
-    text-decoration: none;
-    color: black;
-}
-
-.footer a:hover {
-    color: var(--accentColour);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid rgb(174, 174, 174);
+    background-color: rgb(240, 240, 240);
+    gap: 50px;
 }
 
 .footer1 {
-    height: 160px;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.footer1 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer1 div a {
+    font-size: 0.7em;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.footer1 div a:hover {
+    color: var(--secondaryAccentColour);
+}
+
+.footer1 div h1 {
+    font-family: var(--headerFont);
+    font-weight: 600;
+    font-size: 2em;
+    color: var(--secondaryAccentColour);
+    margin-bottom: 30px;
+}
+
+.footer1 div li {
+    list-style: none;
+    font-size: 0.7em;
+}
+
+.footerNavLinks li {
+    text-decoration: none;
+}
+
+.footer1 div h2 {
+    font-family: var(--headerFont);
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+
+.footer1 button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryAccentColour);
+    margin-top: 20px;
+    animation: exitBtnHover 0.3s ease forwards;
+}
+
+.footer1 button:hover {
+    animation: btnHover 0.3s ease forwards;
+}
+
+.footer2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer2 img {
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.footer2 img:hover {
+    transform: scale(105%);
 }
 
 .footer3 {
-    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: end;
-    margin-top: 6em;
-}
-
-.footer3 span {
-    font-size: 10px;
-    padding: 0 5px 5px 0;
+    margin-bottom: 5px;
 }
 
 .footer3 svg {
-    width: 20px;
-    padding: 0 10px 5px 13px;
-    transition: transform 0.2s ease;
+    margin: 10px 10px 0 10px;
+    transition: transform 0.3s ease;
 }
 
 .footer3 svg:hover {
     transform: scale(150%);
 }
 
-.footerSubElement {
-    margin-top: 3em;
-}
-
-.footerSubElement:first-child {
-    border: none;
-}
-
-.footerHeaders {
-    font-family: "Teko", sans-serif;
-    margin-bottom: 1.6em;
-    flex-direction: column;
-}
-
-.footerHeaders span {
-    font-size: 15px;
-}
-
-.footerCompanyName {
-    font-family: "Teko", sans-serif;
-    margin-bottom: 1em;
-    flex-direction: column;
-    font-size: 25px;
-    font-weight: 600;
-    color: var(--accentColour);
-}
-
-.footerAppointmentBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
-}
-
-.footerAppointmentBtn svg {
-    margin-left: 10px;
-    transform: translateY(5px);
-    fill: black;
-}
-
-.footerAppointmentBtn button {
-    width: 75px;
-    height: 40px;
-    position: relative;
-    font-size: 10px;
-    background-color: var(--secondaryAccentColour);
-    border: none;
-    border-radius: 5px;
-    padding: 8px 10px 15px 10px;
-    animation: exitBtnHover 0.3s ease forwards;
-}
-
-.footerAppointmentBtn button:hover {
-    cursor: pointer;
-    animation: btnHover 0.3s ease forwards;
-}
-
-.socialsContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1em;
+.footer3 span {
+    font-size: 0.6em;
 }
 
 .hidden {
@@ -713,6 +796,26 @@ body.showCart .container{
         width: 220px;
         font-weight: 300;
         font-size: 2.5em;
+    }
+}
+
+@media(width < 700px) {
+    .navLinks {
+        display: none;
+    }
+
+    .navSvg {
+        display: block;
+    }
+
+    .dropDownMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .dropDownMenu a {
+        font-size: 0.7em;
     }
 }
 
