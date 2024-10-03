@@ -19,6 +19,14 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    transition: filter 0.3s ease;
+}
+
+body.blur {
+    filter: blur(2px);
+}
+
 body.no-scroll {
     overflow: hidden;
 }
@@ -104,9 +112,11 @@ nav div h1 {
 }
 
 nav div button {
+    font-family: var(--headerFont);
     width: 100px;
     height: 30px;
     position: relative;
+    font-size: 1.2em;
     text-align: start;
     border: none;
     border-radius: 5px;
@@ -209,6 +219,10 @@ nav svg {
     opacity: 1;
 }
 
+.ContactBtn svg {
+    fill: black;
+}
+
 .headerBackgroundImg {
     position: relative;
 }
@@ -262,6 +276,10 @@ nav svg {
     align-items: center;
 }
 
+.appointmentContainerDetails p {
+    font-size: 0.5em;
+}
+
 .appointmentContainerDetails input, .appointmentContainerDetails button {
     width: 170px;
     height: 30px;
@@ -292,6 +310,10 @@ nav svg {
 input::placeholder {
     font-size: 10px;
     color: black;
+}
+
+input[type="text"] {
+    font-size: 10px;
 }
 
 .appointmentContainerDetails input {
@@ -1530,20 +1552,32 @@ footer {
 @keyframes highlightDiv {
     0% {
         background-color: rgba(255, 255, 255, 0.05);
+        transform: translateX(0);
     }
-
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
     100% {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translateX(0);
     }
 }
 
 @keyframes unHighlightDiv {
     0% {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.5);
+        /* transform: translateX(0); */
     }
 
     100% {
         background-color: rgba(255, 255, 255, 0.05);
+        transform: translateX(0);
     }
 }
 
@@ -1622,7 +1656,7 @@ footer {
     }
 
     .missionStatement p {
-        font-size: 7px;
+        font-size: 8px;
     }
 }
 
