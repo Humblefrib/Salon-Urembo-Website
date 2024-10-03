@@ -144,6 +144,35 @@ nav svg {
     fill: white;
 }
 
+nav div button {
+    font-family: var(--headerFont);
+    width: 100px;
+    height: 30px;
+    position: relative;
+    text-align: start;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondaryAccentColour);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding-left: 10px;
+}
+
+nav div button span {
+    font-weight: 400;
+    color: black;
+}
+
+nav div button svg {
+    position: absolute;
+    top: 2px;
+    left: 67px;
+}
+
+nav div button:hover {
+    transform: scale(108%);
+}
+
 .dropDownMenu {
     font-family: var(--commonFont);
     width: 100%;
@@ -191,6 +220,10 @@ nav svg {
 .dropDownMenu.active {
     top: 0px;
     opacity: 1;
+}
+
+.ContactBtn svg {
+    fill: black;
 }
 
 #section7 {
