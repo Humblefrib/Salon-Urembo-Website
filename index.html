@@ -39,10 +39,12 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
                 </div>
                 <div>
-                    <button class="ContactBtn">
-                        <span>Contact</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-                    </button>
+                    <a href="#section0">
+                        <button class="ContactBtn">
+                            <span>Contact</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+                        </button>
+                    </a>
                 </div>
             </nav>
 
@@ -78,13 +80,14 @@
                     <form class="appointmentContainerDetails" action="https://formspree.io/f/xdknjggp" method="POST">
                         <input type="hidden" name="_subject" value="FORM SUBMITION">
                         <input class="appointmentName" type="text" name="Name" placeholder="Name" required>
+                        <input class="number" type="tel" name="Number" placeholder="Phone Number" required>
                         <input class="email" type="email" name="Email" placeholder="Email" required>
-                        <input class="number" type="tel" name="Number" placeholder="Phone number" required>
                         <input id="cartDataInput" class="message" type="text" name="Message" placeholder="Write your message here (optional)">
                         <button type="submit">
                             <span>Submit Request</span>
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160v-326L336-382l-56-58 200-200 200 200-56 58-104-104v326h-80ZM160-600v-120q0-33 23.5-56.5T240-800h480q33 0 56.5 23.5T800-720v120h-80v-120H240v120h-80Z"/></svg>
                         </button>
+                        <p>*We promise the confidentiality of your information.</p>
                     </form>
                 </div>
             </div>
