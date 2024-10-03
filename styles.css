@@ -476,6 +476,13 @@ iframe {
     color: rgb(255, 255, 255);
 }
 
+.countersBorder {
+    width: 2px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 .aboutUsSection {
     padding-top: 3em;
     position: relative;
@@ -501,6 +508,7 @@ iframe {
 .aboutUsSection h2 {
     font-family: var(--headerFont);
     font-size: 2.5em;
+    font-weight: 500;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -545,7 +553,6 @@ iframe {
 
 #section2 {
     min-height: 100vh;
-    /* position: relative; */
     background-color: #ffeac5;
     overflow: hidden;
     z-index: -10;
@@ -1356,6 +1363,7 @@ body.showCart .container {
 }
 
 footer {
+    overflow-x: hidden;
     font-family: var(--commonFont);
     width: 100%;
     display: flex;
@@ -1371,7 +1379,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 50px;
+    padding-top: 50px;
     gap: 20px;
 }
 
@@ -1572,7 +1580,6 @@ footer {
 @keyframes unHighlightDiv {
     0% {
         background-color: rgba(255, 255, 255, 0.5);
-        /* transform: translateX(0); */
     }
 
     100% {
@@ -1755,6 +1762,15 @@ footer {
     .listCart .quantity span {
         width: 22px;
         height: 22px;
+    }
+
+    .footer1 {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .footer1 div h2 {
+        margin: 30px 0 10px;
     }
 }
 
