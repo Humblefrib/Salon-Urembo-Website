@@ -633,14 +633,14 @@ footer {
     flex-direction: column;
 }
 
-.footer1 div a {
+.footer1 div:nth-child(2) a {
     font-size: 0.7em;
     text-decoration: none;
     color: black;
     transition: color 0.3s ease;
 }
 
-.footer1 div a:hover {
+.footer1 div:nth-child(2) a:hover {
     color: var(--secondaryAccentColour);
 }
 
@@ -680,6 +680,31 @@ footer {
 
 .footer1 button:hover {
     animation: btnHover 0.3s ease forwards;
+}
+
+.appointmentBtn {
+    width: 120px;
+    font-family: var(--headerFont);
+    font-size: 1.5  em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--secondaryAccentColour);
+    color: black;
+}
+
+.appointmentBtn svg {
+    margin-left: 10px;
+    transform: translateY(5px);
+    fill: black;
+}
+
+.footer1 a[href^="tel:"] {
+    text-decoration: none;
 }
 
 .footer2 {
