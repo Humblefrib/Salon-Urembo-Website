@@ -137,7 +137,7 @@ nav div button:hover {
 }
 
 .navLinks {
-    width: 410px;
+    /* width: 410px; */
     height: 30px;
     border: 2px solid;
     border-radius: 5px;
@@ -355,6 +355,7 @@ input[type="text"] {
 
 #section1 {
     background-color: rgb(78, 68, 63);
+    /* background-color: rgb(240, 240, 240); */
     overflow-x: hidden;
 }
 
@@ -428,7 +429,7 @@ iframe {
     width: 35px;
     height: 35px;
     border-radius: 7px;
-    background-color: var(--accentColour);
+    background-color: var(--secondaryAccentColour);
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -472,22 +473,29 @@ iframe {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: var(--secondaryAccentColour);
 }
 
 .countersBorder {
     width: 2px;
     height: 50px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--secondaryAccentColour);
 }
 
 .aboutUsSection {
     padding-top: 3em;
     position: relative;
-    background-color: rgb(215, 162, 77);
+    /* background-color: rgb(215, 162, 77); */
+    background-color: #ffeac5;
     overflow-x: hidden;
+}
+
+.aboutUsSection strong {
+    font-family: var(--headerFont);
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--secondaryAccentColour);
 }
 
 .aboutUsSection svg {
@@ -516,7 +524,6 @@ iframe {
 .aboutUsSection img {
     width: 230px;
     height: 300px;
-    border: 3px solid white;
     border-radius: 30px;
 }
 
@@ -556,11 +563,7 @@ iframe {
     background-color: #ffeac5;
     overflow: hidden;
     z-index: -10;
-}
-
-#section2 svg {
-    position: absolute;
-    top: -1px;
+    padding-bottom: 5em;
 }
 
 .section2Container1 {
@@ -594,10 +597,20 @@ iframe {
 }
 
 .appointmentBtn {
+    font-family: var(--commonFont);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 2em;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--secondaryAccentColour);
+}
+
+.section2ContainerLeft a {
+    text-decoration: none;
+    color: black;
 }
 
 .appointmentBtn svg {
@@ -671,29 +684,30 @@ iframe {
     padding-top: 4em;
 }
 
-.quote-container {
+.reviewsContainer {
     width: 300px;
-    height: 160px;
+    height: 350px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     overflow: hidden;
-    background-color: var(--accentColour);
+    background-color: var(--secondaryAccentColour);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
 .reviewHeader {
     font-family: "Teko", sans-serif;
-    font-size: 35px;
+    font-size: 2.2em;
     font-weight: 500;
 }
 
 .quote {
     width: 90%;
     font-size: 18px;
-    color: #333;
     position: absolute;
-    top: 80px;
     left: 100%;
     transform: translateY(-50%);
     opacity: 0;
@@ -714,10 +728,16 @@ iframe {
 }
 
 .navigation {
-    margin-top: 20px;
+    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navButtons {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-button {
@@ -733,18 +753,6 @@ iframe {
     transition: background-color 0.3s ease;
 }
 
-#nexter {
-    position: absolute;
-    top: 125px;
-    left: 265px;
-}
-
-#previous {
-    position: absolute;
-    top: 125px;
-    left: 230px;
-}
-
 .nav-button svg {
     fill: black;
 }
@@ -754,10 +762,7 @@ iframe {
 }
 
 .counter {
-    font-size: 16px;
-    position: absolute;
-    top: 125px;
-    left: 10px;
+    font-size: 1.3em;
 }
 
 .priceList {
@@ -784,15 +789,23 @@ iframe {
 }
 
 .priceListHeader button {
+    font-family: var(--headerFont);
     width: 140px;
     height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: var(--secondaryAccentColour);
     border: none;
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 0.5em;
     font-weight: 500;
     margin-right: 10px;
     transition: transform 0.3s ease;
+}
+
+.priceListHeader button svg {
+    fill: black;
 }
 
 .priceListHeader button:hover {
@@ -864,7 +877,8 @@ iframe {
     width: 100%;
     min-height: 50vh;
     overflow-x: hidden;
-    background-color: rgb(240, 240, 240);
+    background-color: #ffeac5;
+    /* background-color: rgb(240, 240, 240); */
 }
 
 .section3Header {
@@ -887,8 +901,8 @@ iframe {
 
 .section3Header p {
     font-family: "Roboto", sans-serif;
-    width: 350px;
-    font-size: 10px;
+    width: 400px;
+    font-size: 1em;
 }
 
 .expertsImgs {
@@ -1807,7 +1821,7 @@ footer {
         transform: translateX(-40%);
     }
 
-    .quote-container {
+    .reviewsContainer {
         margin-bottom: 3em;
     }
 
