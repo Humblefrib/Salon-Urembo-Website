@@ -137,7 +137,7 @@ nav div button:hover {
 }
 
 .navLinks {
-    /* width: 410px; */
+    width: 410px;
     height: 30px;
     border: 2px solid;
     border-radius: 5px;
@@ -378,7 +378,7 @@ input[type="text"] {
 
 .section1ContainerWordsLeft1 {
     font-family: "Teko", sans-serif;
-    font-size: 35px;
+    font-size: 2.5em;
 }
 
 .section1ContainerWordsLeft2 {
@@ -473,14 +473,15 @@ iframe {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    color: var(--secondaryAccentColour);
+    /* color: var(--secondaryAccentColour); */
 }
 
 .countersBorder {
     width: 2px;
     height: 50px;
     border-radius: 10px;
-    background-color: var(--secondaryAccentColour);
+    /* background-color: var(--secondaryAccentColour); */
+    background-color: black;
 }
 
 .aboutUsSection {
@@ -585,7 +586,7 @@ iframe {
 .section2ContainerLeft1 {
     font-family: "Teko", sans-serif;
     width: 160px;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: 500;
     color: black;
 }
@@ -597,7 +598,9 @@ iframe {
 }
 
 .appointmentBtn {
-    font-family: var(--commonFont);
+    width: 150px;
+    font-family: var(--headerFont);
+    font-size: 1.5  em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -606,11 +609,11 @@ iframe {
     padding: 5px;
     border-radius: 10px;
     background-color: var(--secondaryAccentColour);
+    color: black;
 }
 
 .section2ContainerLeft a {
     text-decoration: none;
-    color: black;
 }
 
 .appointmentBtn svg {
@@ -766,6 +769,7 @@ iframe {
 }
 
 .priceList {
+    font-family: var(--commonFont);
     width: 300px;
     min-height: 300px;
 }
@@ -1402,15 +1406,20 @@ footer {
     flex-direction: column;
 }
 
-.footer1 div a {
+.footer1 div:nth-child(2) a {
     font-size: 0.7em;
     text-decoration: none;
     color: black;
     transition: color 0.3s ease;
 }
 
-.footer1 div a:hover {
+.footer1 div:nth-child(2) a:hover {
     color: var(--secondaryAccentColour);
+}
+
+.footer1 a[href^="tel:"] {
+    text-decoration: none;
+    margin-bottom: 4em;
 }
 
 .footer1 div h1 {
@@ -1437,17 +1446,16 @@ footer {
     margin-bottom: 30px;
 }
 
-.footer1 button {
+.footer1 a[href^="tel:"] {
     width: 70px;
     height: 30px;
     border: none;
     border-radius: 5px;
-    background-color: var(--secondaryAccentColour);
     margin-top: 20px;
     animation: exitBtnHover 0.3s ease forwards;
 }
 
-.footer1 button:hover {
+.footer1 a[href^="tel:"]:hover {
     animation: btnHover 0.3s ease forwards;
 }
 
@@ -1529,14 +1537,14 @@ footer {
 
     100% {
         transform: translate(-5px, -5px);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); */
     }
 }
 
 @keyframes exitBtnHover {
     0% {
         transform: translate(-5px, -5px);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); */
 
     }
 
