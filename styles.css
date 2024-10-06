@@ -572,12 +572,13 @@ iframe {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 6em;
 }
 
 .section2ContainerLeft {
     width: 340px;
     height: 350px;
-    margin: 6em 1em 0 0;
+    margin: 1.5em 1em 0 0;
     padding: 10px 0 10px 1em;
     background-color: #ffeac5;
     z-index: 10;
@@ -598,8 +599,7 @@ iframe {
 }
 
 .appointmentBtn {
-    width: 150px;
-    
+    width: 120px;
     font-family: var(--headerFont);
     font-size: 1.5  em;
     display: flex;
@@ -773,6 +773,7 @@ iframe {
     font-family: var(--commonFont);
     width: 300px;
     min-height: 300px;
+    margin-top: 6em; 
 }
 
 .priceListHeader {
