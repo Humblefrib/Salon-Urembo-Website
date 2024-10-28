@@ -6,22 +6,18 @@ let clearCart = document.querySelector('.clearCart');
 let iconCart = document.querySelector('.icon-cart');
 let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
-let nav = document.querySelector("nav");
 let selectedPriceRange = 'all';
 let selectedCategory = 'all';
-let sortType = 'name';
 let products = [];
 export let cart = [];
 let sortNameOrder = 'none';
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-    nav.classList.toggle("hidden");
 });
 
 closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
-    nav.classList.toggle("hidden");
 });
 
 const addDataToHTML = () => {
@@ -70,7 +66,7 @@ const addDataToHTML = () => {
                 <img src="${product.image}" alt="">
                 <h2>${product.name}</h2>
                 <div class="price">R${product.price}</div>
-                <button class="addCart">Add To Cart</button>
+                <button class="addCart">Add To Cart<svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#e8eaed"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></button>
             `;
             listProductHTML.appendChild(newProduct);
         });
@@ -81,11 +77,6 @@ const addDataToHTML = () => {
         listProductHTML.appendChild(noProductsMessage);
     }
 }
-
-// document.getElementById('sortName').addEventListener('click', () => {
-//     sortType = 'name';
-//     addDataToHTML();
-// });
 
 document.getElementById('sortName').addEventListener('change', (event) => {
     sortNameOrder = event.target.value; // Set sorting order
@@ -256,5 +247,5 @@ const checkoutButton = document.querySelector('.checkOut');
 
 checkoutButton.addEventListener('click', () => {
     addCartToMemory(); // Save cart data to localStorage
-    window.location.href = 'index.html'; // Redirect to form page (update the path as needed)
+    window.location.href = 'checkout.html'; // Redirect to form page (update the path as needed)
 });
