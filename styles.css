@@ -2,34 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 :root {
-    --secondaryAccentColour: rgb(255, 0, 0);
-    --accentColour: rgb(255, 0, 0, 0.8);
-
+    --accentColour: rgb(255, 0, 0);
     --commonFont: "Roboto", sans-serif;
     --headerFont: "Teko", sans-serif;
+    --headerFontSize: 5em;
+    --commonFontSize: 1em;
+    --hudElementZ-Index: 1000;
 }
 
 * {
     margin: 0;
     padding: 0;
+    font-family: var(--commonFont);
+    color: black;
+    text-decoration: none;
 }
 
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
+html { scroll-behavior: smooth; }
 
-body {
-    transition: filter 0.3s ease;
-}
-
-body.blur {
-    filter: blur(2px);
-}
-
-body.no-scroll {
-    overflow: hidden;
-}
+body.no-scroll { overflow: hidden; }
 
 .loadingScreen {
     width: 100vw;
@@ -78,15 +69,6 @@ body.no-scroll {
     transform: translateY(-100px);
 }
 
-header {
-    min-height: 100vh;
-    background-image: linear-gradient(135deg, rgb(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
-    background-blend-mode: multiply;
-    background-size: cover;
-    font-family: "Roboto", sans-serif;
-    color: white;
-}
-
 nav {
     width: 100%;
     height: 100px;
@@ -99,9 +81,7 @@ nav {
     padding-top: 5px;
 }
 
-nav div:first-child a {
-    text-decoration: none;
-}
+nav div:first-child a { text-decoration: none; }
 
 nav div h1 {
     font-family: var(--headerFont);
@@ -112,7 +92,6 @@ nav div h1 {
 }
 
 nav div button {
-    font-family: var(--headerFont);
     width: 100px;
     height: 30px;
     position: relative;
@@ -120,11 +99,13 @@ nav div button {
     text-align: start;
     border: none;
     border-radius: 5px;
-    background-color: var(--secondaryAccentColour);
+    background-color: var(--accentColour);
     cursor: pointer;
     transition: transform 0.3s ease;
     padding-left: 10px;
 }
+
+nav div button span { font-family: var(--headerFont); }
 
 nav div button svg {
     position: absolute;
@@ -132,14 +113,12 @@ nav div button svg {
     left: 67px;
 }
 
-nav div button:hover {
-    transform: scale(108%);
-}
+nav div button:hover { transform: scale(108%); }
 
 .navLinks {
     width: 410px;
-    height: 30px;
-    border: 2px solid;
+    height: 35px;
+    border: 2px solid white;
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -158,16 +137,11 @@ nav div button:hover {
     transition: all ease 0.5s;
 }
 
-.navLinks a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
+.navLinks a:hover { background-color: rgba(255, 255, 255, 0.5); }
 
 .navSvg {
     display: none;
     cursor: pointer;
-}
-
-nav svg {
     fill: white;
 }
 
@@ -188,9 +162,7 @@ nav svg {
     border-bottom-right-radius: 35%;
 }
 
-.dropDownMenu div {
-    position: relative;
-}
+.dropDownMenu div { position: relative; }
 
 .dropDownMenu a {
     padding: 5px 30px;
@@ -210,215 +182,223 @@ nav svg {
     background-color: black;
 }
 
-.dropDownMenu div:hover .underLine{
-    transform: scaleX(1);
-}
+.dropDownMenu div:hover .underLine{ transform: scaleX(1); }
 
 .dropDownMenu.active {
     top: 0px;
     opacity: 1;
 }
 
-.ContactBtn svg {
-    fill: black;
+.ContactBtn svg { fill: black; }
+
+#section1 {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-.headerBackgroundImg {
-    position: relative;
-}
+.section1BackgroundImg { position: relative; }
 
-.headerBackgroundImg img {
+.section1BackgroundImg img {
     width: 100%;
     min-height: 150vh;
-    object-fit: cover;
     position: absolute;
+    object-fit: cover;
     top: -100px;
-    z-index: -10;
     user-select: none;
+    z-index: -10;
 }
 
-.highlight {
-    animation: highlightDiv 0.5s ease forwards;
-}
-
-.unHighlight {
-    animation: unHighlightDiv 0.5s ease forwards;
-}
-
-.appointmentContainer {
-    width: 220px;
-    height: 280px;
+.section1Content {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: 2em;
-    border: 1px solid;
-    border-radius: 10px;
-    position: absolute;
-    top: 150px;
-    backdrop-filter: blur(10px);
 }
 
-.appointmentContainerHeader {
-    font-family: "Teko", sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.appointmentContainerDetails {
-    width: 220px;
+.section1IntroWords {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.section1IntroWords h1 {
+    font-family: var(--headerFont);
+    padding: 0 0.1em;
+    transform: translateY(50px);
+    font-size: 5em;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.section1IntroWords span {
+    padding: 0 0.1em;
+    transform: translateY(40px);
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.section1Cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: end;
+    margin-bottom: 1em;
+    gap: 20px;
+}
+
+.section1Cards-1 {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    gap: 10px;
 }
 
-.appointmentContainerDetails p {
-    font-size: 0.5em;
+.section1AboutUs {
+    width: 240px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1em;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.appointmentContainerDetails input, .appointmentContainerDetails button {
-    width: 170px;
-    height: 30px;
-    border-radius: 7px;
-    padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid white;
+.section1AboutUs span {
+    padding: 1em;
+    font-size: 0.7em;
+    color: white;
 }
 
-.appointmentContainerDetails button {
+.section1AboutUs button {
+    font-family: var(--headerFont);
+    width: 120px;
+    height: 35px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transition: transform 0.3s ease;
-    background-color: var(--secondaryAccentColour);
+    margin: 0 0 0.4em 1em;
+    font-size: 1.1em;
+    font-weight: 500;
     border: none;
-}
-
-.appointmentContainerDetails button:hover {
-    transform: scale(105%);
+    border-radius: 6px;
+    background-color: var(--accentColour);
     cursor: pointer;
 }
 
-.appointmentContainerDetails button svg {
-    fill: black;
-}
+.section1AboutUs button svg { fill: black; }
 
-input::placeholder {
-    font-size: 10px;
-    color: black;
-}
-
-input[type="text"] {
-    font-size: 10px;
-}
-
-.appointmentContainerDetails input {
-    transition: all ease 0.3s;
-}
-
-.appointmentContainerDetails input:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.sloganContainer {
-    width: 220px;
-    height: 200px;
-    position: absolute;
-    top: 65vh;
-    right: 0;
-    margin-right: 1em;
+.section1Cards-1VideoContainer {
+    width: 240px;
+    height: 150px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin-left: 1em;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.sloganWords {
-    font-family: "Teko", sans-serif;
-    text-align: end;
-    font-size: 40px;
-    font-weight: 400;
+.section1Cards-1VideoContainer video {
+    width: 200px;
+    border: none;
+    border-radius: 10px;
 }
 
-.missionStatement {
-    position: absolute;
-    bottom: 0;
-    width: 300px;
-    margin: 0 0 1em 1em;
-}
-
-.missionStatement p {
-    font-size: 10px;
-}
-
-#section1 {
+#section2 {
     font-family: var(--commonFont);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    color: white;
     background-color: rgb(78, 68, 63);
 }
 
-.section1Header-1 {
+.section2Header-1 {
     margin: 2em 0 4em;
     padding: 0 1em;
 }
 
-.section1Header-1 h1 {
+.section2Header-1 h1 {
     font-family: var(--headerFont);
     font-size: 2.5em;
     font-weight: 500;
+    color: white;
 }
 
-.section1Header-1 p {
+.section2Header-1 p {
     font-size: 0.8em;
+    color: white;
 }
 
-.section1Header-2 {
-    font-family: var(--headerFont);
+.sectionHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-bottom: 5em;
 }
 
-.section1Header-2 span {
+.sectionHeader span {
+    font-family: var(--headerFont);
     font-size: 2em;
     margin-bottom: -1em;
+    color: white;
 }
 
-.section1Header-2 h1 {
+.sectionHeader h1 {
+    font-family: var(--headerFont);
     font-size: 7em;
     font-weight: 500;
-    margin-bottom: 0.5em;
+    color: white;
 }
 
-.section1Header-2 div {
+.introLinks {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    transform: translate(50px, -30px);
+}
+
+.introLinks svg { transition: transform 0.3s ease; }
+
+.introLinks svg:hover { transform: scale(150%); }
+
+.introDecoration {
     width: 50px;
     height: 5px;
     position: absolute;
     top: 140px;
     transform: translateX(-100px);
-    background-color: var(--secondaryAccentColour);
+    background-color: var(--accentColour);
 }
 
-.section1-1 {
+.section2-1 {
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 0 1em;
     gap: 10px;
 }
 
-.section1Map iframe {
+.section2Map iframe {
     width: 100%;
     border-radius: 15px;
     margin-bottom: 5em;
 }
 
-.section1Details {
+.section2Details {
     height: 490px;
     display: flex;
     flex-direction: column;
@@ -427,123 +407,49 @@ input[type="text"] {
     text-align: center;
 }
 
-.section1DetailsBlock {
+.section2DetailsBlock {
     padding-bottom: 2em;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid white;
 }
 
-.section1SvgContainer {
+.section2SvgContainer {
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: var(--secondaryAccentColour);
+    background-color: var(--accentColour);
 }
 
-.section1SvgContainer svg {
-    fill: black;
-}
+.section2SvgContainer svg { fill: black; }
 
-.section1Details div {
+.section2Details div {
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
 }
 
-.section1Details h2 {
+.section2Details h2 {
     font-family: var(--headerFont);
     font-size: 2em;
     font-weight: 400;
+    color: white;
 }
 
-.section1Details span {
+.section2Details span {
     font-size: 0.8em;
+    color: white;
 }
 
-.countersContainer {
-    font-family: "Teko", sans-serif;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 6em;
-    gap: 20px;
-}
-
-.counters {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.countersBorder {
-    width: 2px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: black;
-}
-
-.aboutUsSection {
+#section3 {
     padding-top: 3em;
     position: relative;
     background-color: #ffeac5;
     overflow-x: hidden;
 }
 
-.aboutUsSectionHeader {
-    font-family: var(--headerFont);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.aboutUsSectionHeader span {
-    font-size: 2em;
-    margin-bottom: -1em;
-}
-
-.aboutUsSectionHeader h1 {
-    font-size: 7em;
-    font-weight: 500;
-    margin-bottom: 0.5em;
-}
-
-.aboutUsSectionHeaderDecoration {
-    width: 100px;
-    height: 5px;
-    position: absolute;
-    top: 140px;
-    transform: translateX(-100px);
-    background-color: var(--secondaryAccentColour);
-}
-
-.aboutUsSection strong {
-    font-family: var(--headerFont);
-    font-size: 1.2em;
-    font-weight: 500;
-    color: var(--secondaryAccentColour);
-}
-
-.ourStoryContainer, .mission, .meetCeoContainer {
-    padding-bottom: 1em;
-}
-
-.meetCeoContainer {
-    margin-bottom: 5em;
-}
-
-.aboutUsSection p {
-    font-family: var(--commonFont);
-    padding: 10px;
-}
-
-.aboutUsSection h2 {
+#section3 h2 {
     font-family: var(--headerFont);
     font-size: 3em;
     font-weight: 500;
@@ -551,11 +457,21 @@ input[type="text"] {
     padding: 20px 0;
 }
 
-.aboutUsSection img {
-    width: 230px;
-    height: 300px;
-    border-radius: 30px;
+#section3 strong {
+    font-family: var(--headerFont);
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--accentColour);
 }
+
+#section3 p {
+    font-family: var(--commonFont);
+    padding: 10px;
+}
+
+.sectionHeader1 span, .sectionHeader1 h1 { color: black; }
+
+.ourStoryContainer, .mission, .meetCeoContainer { padding-bottom: 1em; }
 
 .ourStory {
     display: flex;
@@ -564,13 +480,11 @@ input[type="text"] {
     align-items: center;
 }
 
-.ourStory p {
-    max-width: 400px;
-}
+.ourStory p { max-width: 400px; }
 
 .mission h2 {
     text-align: center;
-    margin: 0;
+    margin-right: 1em;
 }
 
 .aboutCards {
@@ -591,7 +505,6 @@ input[type="text"] {
     display: flex;
     align-items: flex-end;
     transition: 0.5s ease-in-out;
-    border: 1px solid;
     border-radius: 18px;
     overflow: hidden;
 }
@@ -649,14 +562,12 @@ input[type="text"] {
 
 .aboutCard .aboutCardInfo p {
     letter-spacing: 1px;
-    font-size: 15px;
+    font-size: 0.9em;
     margin: 8px 0 20px 0;
     color: white;
 }
 
-.meetCeoContainer {
-    margin-top: 2em;
-}
+.meetCeoContainer { margin: 2em 0 5em 0; }
 
 .meetCeoContainer h2 {
     text-align: end;
@@ -675,23 +586,55 @@ input[type="text"] {
     text-align: end;
 }
 
-#section2 {
+.meetCeo1 img {
+    width: 230px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.countersContainer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 6em;
+    text-align: center;
+    gap: 20px;
+}
+
+.counters {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.countersBorder {
+    width: 2px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#section4 {
     min-height: 100vh;
+    padding-bottom: 5em;
     background-color: #ffeac5;
     overflow: hidden;
     z-index: -10;
-    padding-bottom: 5em;
 }
 
-.section2Container1 {
+.section4Container1 {
     width: 100vw;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     margin: -3em 0 6em 0;
 }
 
-.section2ContainerLeft {
+.section4ContainerLeft {
     width: 340px;
     height: 410px;
     margin: 1.5em 1em 0 0;
@@ -700,24 +643,22 @@ input[type="text"] {
     z-index: 10;
 }
 
-.section2ContainerLeft1 {
-    font-family: "Teko", sans-serif;
+.section4ContainerLeft1 {
     width: 230px;
     font-size: 3.5em;
     font-weight: 500;
     color: black;
 }
 
-.section2ContainerLeft2 {
-    font-family: "Roboto", sans-serif;
+.section4ContainerLeft1 span { font-family: var(--headerFont); }
+
+.section4ContainerLeft2 {
     font-size: 1em;
     padding-top: 2em;
 }
 
 .appointmentBtn {
     width: 120px;
-    font-family: var(--headerFont);
-    font-size: 1.5  em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -725,13 +666,11 @@ input[type="text"] {
     margin-top: 2em;
     padding: 5px;
     border-radius: 10px;
-    background-color: var(--secondaryAccentColour);
+    background-color: var(--accentColour);
     color: black;
 }
 
-.section2ContainerLeft a {
-    text-decoration: none;
-}
+.appointmentBtn span { font-family: var(--headerFont); }
 
 .appointmentBtn svg {
     margin-left: 10px;
@@ -741,18 +680,18 @@ input[type="text"] {
 
 .appointmentBtn button {
     width: 100px;
+    padding: 11px 10px 15px 0px;
     position: relative;
-    font-size: 10px;
-    background-color: var(--secondaryAccentColour);
     border: none;
     border-radius: 5px;
-    padding: 11px 10px 15px 0px;
+    font-size: 10px;
+    background-color: var(--secondaryAccentColour);
     animation: exitBtnHover 0.3s ease forwards;
+    cursor: pointer;
 }
 
 .appointmentBtn button:hover {
     background-color: var(--accentColour);
-    cursor: pointer;
     animation: btnHover 0.3s ease forwards;
 }
 
@@ -795,7 +734,7 @@ input[type="text"] {
     cursor: grab;
 }
 
-.section2Container2 {
+.section4Container2 {
     width: 100%;
     min-height: 300px;
     display: flex;
@@ -813,26 +752,27 @@ input[type="text"] {
     justify-content: space-between;
     text-align: center;
     overflow: hidden;
-    background-color: var(--secondaryAccentColour);
+    background-color: var(--accentColour);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
-.reviewHeader {
-    font-family: "Teko", sans-serif;
+.reviewHeader h2 {
+    font-family: var(--headerFont);
+    margin-top: 0.5em;
     font-size: 2.2em;
     font-weight: 500;
 }
 
 .quote {
     width: 90%;
-    font-size: 18px;
+    margin: 0 10px;
     position: absolute;
     left: 100%;
     transform: translateY(-50%);
+    font-size: 18px;
     opacity: 0;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    margin: 0 10px;
 }
 
 .quote.active {
@@ -848,10 +788,10 @@ input[type="text"] {
 }
 
 .navigation {
-    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px;
 }
 
 .navButtons {
@@ -873,17 +813,11 @@ input[type="text"] {
     transition: background-color 0.3s ease;
 }
 
-.nav-button svg {
-    fill: black;
-}
+.nav-button svg { fill: black; }
 
-.nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
+.nav-button:hover { background-color: rgba(255, 255, 255, 0.5); }
 
-.counter {
-    font-size: 1.3em;
-}
+.counter { font-size: 1.3em; }
 
 .priceList {
     font-family: var(--commonFont);
@@ -894,13 +828,16 @@ input[type="text"] {
 
 .priceListHeader {
     width: 350px;
-    font-family: "Teko", sans-serif;
-    font-size: 35px;
-    font-weight: 500;
-    color: black;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    color: black;
+}
+
+.priceListHeader h2 {
+    font-family: var(--headerFont);
+    font-size: 2.2em;
+    font-weight: 500;
 }
 
 .priceListHeader a {
@@ -917,18 +854,16 @@ input[type="text"] {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--secondaryAccentColour);
+    margin-right: 10px;
     border: none;
     border-radius: 8px;
-    font-size: 0.5em;
+    font-size: 1.2em;
     font-weight: 500;
-    margin-right: 10px;
     transition: transform 0.3s ease;
+    background-color: var(--accentColour);
 }
 
-.priceListHeader button svg {
-    fill: black;
-}
+.priceListHeader button svg { fill: black; }
 
 .priceListHeader button:hover {
     cursor: pointer;
@@ -936,9 +871,7 @@ input[type="text"] {
     transform: scale(105%);
 }
 
-.priceContainer:last-child {
-    text-align: center;
-}
+.priceContainer:last-child { text-align: center; }
 
 .priceRow {
     display: flex;
@@ -948,558 +881,109 @@ input[type="text"] {
     border-bottom: 1px solid rgb(138, 138, 138);
 }
 
-.priceRow:last-child {
-    border: none;
-    padding-bottom: 0;
-}
+.priceRow:last-child { border: none; }
 
-.slider {
-    width: 100%;
-    border: 1px solid black;
-    height: var(--height);
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
-}
+#section5 { background-color: rgb(240, 240, 240); }
 
-.slider .list {
-    display: flex;
-    width: 100%;
-    min-width: calc(var(--width) * var(--quantity));
-    position: relative;
-}
+.sectionHeader2 { padding-top: 3em; }
 
-.slider .list .item {
-    width: var(--width);
-    height: var(--height);
-    position: absolute;
-    left: 100%;
-    animation: autoRun 10s linear infinite;
-    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
-}
-
-.slider .list .item img {
-    width: 100%;
-}
-
-.slider:hover .item {
-    animation-play-state: paused!important; 
-}
-
-.item {
-    display: flex;
-    align-items: center;
-}
-
-.list img {
-    padding: 0 0.5em;
-    user-select: none;
-}
-
-#section4 {
-    width: 100%;
-    min-height: 50vh;
-    overflow-x: hidden;
-    background-color: #ffeac5;
-    /* background-color: rgb(240, 240, 240); */
-}
-
-.section3Header {
-    width: 100%;
-    height: 100px;
-    padding: 3em 0 2em 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.section3Header span {
-    font-family: "Teko", sans-serif;
-    font-size: 45px;
-    font-weight: 500;
+.sectionHeader2 h1 {
+    font-size: 4.7em;
     color: black;
 }
 
-.section3Header p {
-    font-family: "Roboto", sans-serif;
-    width: 400px;
-    font-size: 1em;
-}
+.sectionHeader2 span { color: black; }
 
-.expertsImgs {
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 7px;
-    padding-bottom: 1em;
-}
+.sectionHeader2 svg { margin-top: 15px; }
 
-.expertImg {
-    flex: 1;
-    width: calc((100% / 4) - 20px);
-    min-width: 130px;
-    max-width: 200px;
-    height: 270px;
-    overflow: hidden;
-    padding: 0 0.5em;
-}
-
-.expertImg:nth-child(1) {
-    flex: 1;
-    width: calc((100% / 4) - 10px);
-    min-width: 130px;
-    max-width: 190px;
-    height: 300px;
-    overflow: hidden;
-    padding: 0 0.5em;
-}
-
-.expertImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-#section3 {
-    min-height: 100vh;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    background-color: #ECE1CD;
-    padding-bottom: 3em;
-    transition: padding-bottom 0.3s ease;
-    overflow-y: auto;
-}
-
-.container {
-    font-family: "Roboto", sans-serif;
-    width: 900px;
-    margin: auto;
-    max-width: 90vw;
-    text-align: center;
-    padding-top: 10px;
-    transition: transform .5s;
-}
-
-.containerHeader {
-    padding: 20px 0;
-}
-
-.iconCart {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 2px solid white;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.iconCart:hover {
-    transform: scale(110%);
-}
-
-.iconCart svg {
-    width: 25px;
-}
-
-.iconCart span {
+.introDecoration2 {
+    width: 50px;
+    height: 5px;
     position: absolute;
-    background-color: red;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 35px;
-    left: 40px;
-}
-
-.shopHeader {
-    font-family: "Teko", sans-serif;
-    text-align: center;
-    font-size: 45px;
-    padding-top: 1em;
-}
-
-.listProduct .Item img {
-    width: 70%;
-    filter: drop-shadow(0 50px 20px #0009);
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.listProduct .Item img:hover {
-    border: 1px solid;
-    border-radius: 15px;
-    transform: scale(105%);
-    filter: drop-shadow(0 25px 20px #0009);
-}
-
-.listProduct {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: relative;
-    top: 0px;
-    gap: 20px;
-    z-index: 99;
-    transition: top 0.3s ease;
-    background-color: #ECE1CD;
-}
-
-.listProduct .Item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
-}
-
-.listProduct .Item:hover {
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
-    transform: scale(105%);
-}
-
-.listProduct .Item h2 {
-    font-weight: 400;
-    font-size: 15px;
-    padding: 15px 0;
-}
-
-.listProduct .Item .price {
-    letter-spacing: 5px;
-    font-size: small;
-}
-
-.listProduct .Item button {
-    width: 100px;
-    background-color: var(--secondaryAccentColour);
-    border: none;
-    padding: 10px 0;
-    margin-top: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.listProduct .Item button:hover {
-    background-color: var(--accentColour);
-    transform: scale(110%);
-}
-
-.cartTab {
-    font-family: "Roboto", sans-serif;
-    width: 400px;
-    background-color: rgba(53, 52, 50, 0.9);
-    color: white;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    bottom: 0;
-    display: grid;
-    grid-template-rows: 70px 1fr 70px;
-    transition: .5s;
-    z-index: 999;
-}
-
-body.showCart .cartTab {
-    right: 0;
-}
-
-body.showCart .container {
-    transform: translateX(-250px);
-}
-
-.cartTabHeader {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.cartTabHeader button {
-    width: 90px;
-    height: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.cartTabHeader button:hover {
-    transform: scale(105%);
-}
-
-.cartTabHeader h1 {
-    font-family: "Teko", sans-serif;
-    padding: 20px;
-    margin: 0;
-    font-weight: 300;
-    font-size: 40px;
-}
-
-.emptyCartNotify {
-    position: absolute;
-    top: 45%;
-    left: 33%;
-}
-
-.cartTab .btn {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.cartTab .btn button{
-    width: 100%;
-    height: 100%;
-}
-
-.cartTab button {
-    background-color: var(--secondaryAccentColour);
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.cartTab button:hover {
+    top: 150px;
+    transform: translateX(-100px);
     background-color: var(--accentColour);
 }
 
-.cartTab .close {
-    background-color: rgb(210, 210, 210);
-}
-
-.cartTab .close:hover {
-    background-color: white;
-}
-
-.listCart {
-    overflow: auto;
-}
-
-.listCart .Item {
-    display: grid;
-    grid-template-columns: 70px 120px 50px 1fr;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.listCart .Item:last-child {
-    border: none;
-}
-
-.listCart .Item img {
+.section5FormContainer {
     width: 100%;
-}
-
-.listCart .quantity span {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border-radius: 50%;
-    color: black;
-    cursor: pointer;
-}
-
-.listCart .quantity span:nth-child(2) {
-    background-color: transparent;
-    color: white;
-    cursor: auto;
-}
-
-.listCart .Item:nth-child(even) {
-    background-color: #eee1;
-}
-
-.listCart::-webkit-scrollbar {
-    width: 0;
-}
-
-.detailContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.detail {
-    width: 90%;
-    max-width: 900px;
-    height: 360px;
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
-}
-
-.detail1 {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.detail1 .image::before {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    content: '';
-    background-color: #94817733;
-    border-radius: 190px 100px 170px 180px;
-    top: 50px;
-}
-
-.detail1 img {
-    width: 300px;
-    position: relative;
-}
-
-.detail2 {
-    width: 50%;
-    height: 100%;
-}
-
-.content {
-    width: 100%;
-    height: 100%;
-}
-
-.content1 {
-    height: 30%;
-    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.name {
-    padding: 20px 0 0 0;
-    margin: 0 0 10px 0;
-}
-
-.detail .price {
-    font-weight: bold;
-    font-size: x-large;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-}
-
-.content2 {
-    height: 20%;
-}
-
-.description {
-    font-weight: 300;
-    padding-bottom: 20px;
-    border-bottom: 1px solid black;
-}
-
-.detail .buttons button {
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 15px 20px;
-    margin-top: 10px;
-    font-size: large;
-    cursor: pointer;
-    animation: exitBtnHover 0.3s ease forwards;
-}
-
-.detail .buttons button:hover {
-    animation: btnHover 0.3s ease forwards;
-}
-
-.detail .buttons button:nth-child(2) {
-    background-color: var(--secondaryAccentColour);
-    display: inline-flex;
-    gap: 20px;
-    margin-left: 10px;
-}
-
-.shoppingContainer1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.shoppingContainer {
-    width: 220px;
-    height: 300px;
-    border: 1px solid white;
-    border-radius: 10px;
-    position: absolute;
-    top: 30%;
-    backdrop-filter: blur(2px);
-    background-color: rgba(255, 255, 255, 0.05);
-    z-index: 999;
-}
-
-.shoppingContainerDetails {
-    width: 220px;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
+}
+
+.section5FormContainer h2 {
+    font-family: var(--headerFont);
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.section5FormContainer form div {
+    display: flex;
     flex-direction: column;
+    margin-top: 1.5em;
+    padding: 0 20px;
 }
 
-.shoppingContainerDetails input {
-    width: 180px;
-    height: 35px;
-    max-height: 45px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgb(222, 222, 222);
-}
-
-.seeMoreProductsBtnContainer {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    margin-top: 3em;
-}
-
-.seeMoreProductsBtnContainer a {
-    text-decoration: none;
-    color: black;
-}
-
-.seeMoreProductsBtn {
-    width: 120px;
+.section5FormContainer form div input {
     height: 40px;
-    background-color: var(--secondaryAccentColour);
-    border-radius: 8px;
+    padding-left: 1em;
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: rgb(240, 240, 240);
+}
+
+.section5FormContainer form div button {
+    font-family: var(--headerFont);
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: jiggle 3s ease infinite;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--accentColour);
 }
 
-.seeMoreProductsBtn:hover {
-    transform: scale(105%);
+.section5FormContainer form div button span {
+    font-family: var(--headerFont);
+    font-size: 1.5em;
+}
+
+.section5FormContainer form div button svg { fill: black; }
+
+.section5FormContainer p {
+    margin-top: 1em;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.section5CallContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0 0 0;
+    padding-bottom: 3em;
+}
+
+.section5CallContainer h2 {
+    font-family: var(--headerFont);
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.section5CallContainer a {
+    font-family: var(--headerFont);
+    border: none;
+    margin-top: 1em;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    background-color: var(--accentColour);
 }
 
 footer {
-    overflow-x: hidden;
     font-family: var(--commonFont);
     width: 100%;
     display: flex;
@@ -1526,35 +1010,27 @@ footer {
 
 .footer1 div:nth-child(2) a {
     font-size: 0.7em;
-    text-decoration: none;
     color: black;
     transition: color 0.3s ease;
 }
 
 .footer1 div:nth-child(2) a:hover {
-    color: var(--secondaryAccentColour);
+    color: var(--accentColour);
 }
 
-.footer1 a[href^="tel:"] {
-    text-decoration: none;
-    margin-bottom: 4em;
-}
+.footer1 a[href^="tel:"] { margin-bottom: 4em; }
 
 .footer1 div h1 {
     font-family: var(--headerFont);
     font-weight: 600;
     font-size: 2em;
-    color: var(--secondaryAccentColour);
+    color: var(--accentColour);
     margin-bottom: 30px;
 }
 
 .footer1 div li {
     list-style: none;
     font-size: 0.7em;
-}
-
-.footerNavLinks li {
-    text-decoration: none;
 }
 
 .footer1 div h2 {
@@ -1573,9 +1049,7 @@ footer {
     animation: exitBtnHover 0.3s ease forwards;
 }
 
-.footer1 a[href^="tel:"]:hover {
-    animation: btnHover 0.3s ease forwards;
-}
+.footer1 a[href^="tel:"]:hover { animation: btnHover 0.3s ease forwards; }
 
 .footer2 {
     width: 100%;
@@ -1589,9 +1063,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.footer2 img:hover {
-    transform: scale(105%);
-}
+.footer2 img:hover { transform: scale(105%); }
 
 .footer3 {
     width: 100%;
@@ -1606,209 +1078,37 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.footer3 svg:hover {
-    transform: scale(150%);
-}
+.footer3 svg:hover { transform: scale(150%); }
 
-.footer3 span {
-    font-size: 0.6em;
-}
-
-.hidden {
-    display: none;
-}
-
-.HiddenLeft {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
-}
-
-.HiddenRight {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(100%);
-    transition: all 1s;
-}
-
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
-
-@keyframes autoRun {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: calc(var(--width) * -1);
-    }
-}
-
-@keyframes btnHover {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-5px, -5px);
-        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); */
-    }
-}
-
-@keyframes exitBtnHover {
-    0% {
-        transform: translate(-5px, -5px);
-        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); */
-
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes jiggle {
-    0% {
-        transform: translateY(0);
-    }
-
-    5% {
-        transform: translateY(-10px);
-    }
-
-    10% {
-        transform: translateY(10px);
-    }
-
-    15% {
-        transform: translateY(-10px);
-    }
-
-    20% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes highlightDiv {
-    0% {
-        background-color: rgba(255, 255, 255, 0.05);
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-10px);
-    }
-    50% {
-        transform: translateX(10px);
-    }
-    75% {
-        transform: translateX(-10px);
-    }
-    100% {
-        background-color: rgba(255, 255, 255, 0.5);
-        transform: translateX(0);
-    }
-}
-
-@keyframes unHighlightDiv {
-    0% {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    100% {
-        background-color: rgba(255, 255, 255, 0.05);
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveUpDown {
-    0% {
-        top: 250px;
-    }
-    50% {
-        top: 0px;
-    }
-    100% {
-        top: 250px;
-    }
-}
-
-.moving-up-down {
-    animation: moveUpDown 0.5s;
-}
-
-@media only screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+.footer3 span { font-size: 0.6em; }
 
 @media(width > 1000px) {
-    .headerBackgroundImg img {
-        top: -250px;
-    }
+    .section1BackgroundImg img { top: -250px; }
 
-    .sloganContainer {
-        width: 500px;
-    }
+    .section1AboutUs { width: 300px; }
 
-    .sloganWords {
-        font-size: 70px;
-    }
+    .section1Cards-1VideoContainer { width: 300px; }
 
-    .section2Container1 {
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    .section1Cards-1VideoContainer video { width: 230px; }
 
-    .section1ContainerWordsLeft1 {
-        font-size: 60px;
-    }
-
-    .swiper {
-        transform: translateX(-55%);
-    }
-
-    .loadingScreen img {
-        width: 50%;
-        object-fit: cover;
-        transform: translateY(-100px);
+    .imgSlider {
+        width: 450px;
+        height: 350px;
+        margin-top: 6em;
+        transform: translateX(-200px);
     }
 }
 
-@media(width < 800px) {
-    .countersContainer {
-        font-size: 17px;
-    }
-
-    .missionStatement p {
-        font-size: 8px;
-    }
+@media(width < 770px) {
+    .section1IntroWords h1 { font-size: 4em; }
+    
+    .section1IntroWords span { font-size: 1em; }
 }
 
 @media(width < 700px) {
-    .navLinks {
-        display: none;
-    }
+    .navLinks { display: none; }
 
-    .navSvg {
-        display: block;
-    }
+    .navSvg { display: block; }
 
     .dropDownMenu {
         display: flex;
@@ -1816,11 +1116,9 @@ footer {
         justify-content: space-evenly;
     }
 
-    .dropDownMenu a {
-        font-size: 0.7em;
-    }
+    .dropDownMenu a { font-size: 0.7em; }
 
-    .section1-1 {
+    .section2-1 {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -1828,219 +1126,19 @@ footer {
 }
 
 @media(width < 650px) {
-    .navLinks a {
-        padding: 3px 0;
-    }
-
-    .section1Container {
-        gap: 2em;
-    }
-
-    .section1ContainerWordsLeft {
-        height: 170px;
-    }
-
-    .section1ContainerMap {
-        height: 400px;
-        margin-top: 0.5em;
-    }
-
-    .section1ContainerWordsRight {
-        height: 350px;
-    }
-
-    .section1ContainerWordsLeft2 {
-        font-size: 8px;
-    }
-
-    .countersContainer {
-        font-size: 12px;
-    }
-
-    .section1Header-2 span {
-        font-size: 1.5em;
-        margin-bottom: -1em;
-    }
+    .section1IntroWords h1 { font-size: 3em; }
     
-    .section1Header-2 h1 {
-        font-size: 5em;
-        font-weight: 500;
-        margin-bottom: 0.5em;
-    }
-    
-    .section1Header-2 div {
-        width: 50px;
-        height: 5px;
-        position: absolute;
-        top: 100px;
-        transform: translateX(-90px);
-        background-color: var(--secondaryAccentColour);
-    }
+    .section1IntroWords span { font-size: 0.7em; }
 
-    .aboutUsSectionHeader span {
-        font-size: 1.5em;
-        margin-bottom: -1em;
-    }
-    
-    .aboutUsSectionHeader h1 {
-        font-size: 5em;
-        font-weight: 500;
-        margin-bottom: 0.5em;
-    }
-    
-    .aboutUsSectionHeaderDecoration {
-        width: 100px;
-        height: 5px;
-        position: absolute;
-        top: 100px;
-        transform: translateX(-90px);
-        background-color: var(--secondaryAccentColour);
-    }
-
-    .section2ContainerLeft1 {
-        width: 200px;
-        font-size: 2em;
-    }
-
-    .section2ContainerLeft {
-        width: 160px;
-    }
-
-    .section2ContainerLeft2 {
-        width: 160px;
-        font-size: 0.8em;
-    }
-
-    .appointmentBtn button {
-        width: 80px;
-        font-size: 10px;
-        padding: 8px 10px 15px 10px;
-    }
-
-    .detail1 .image::before {
-        width: 150px;
-        height: 150px;
-        top: 50px;
-    }
-    
-    .detail1 img {
-        width: 150px;
-    }
-
-    .detail .buttons button {
-        font-size: 10px;
-        border-radius: 15px;
-        padding: 8px 10px;
-    }
-
-    .detail {
-        height: 250px;
-    }
-
-    .name {
-        font-size: 20px;
-    }
-    
-    .detail .price {
-        font-size: 15px;
-    }
-
-    .description {
-        font-size: 9px;
-    }
-
-    .cartTab {
-        width: 100%;
-    }
-
-    .listCart .quantity span {
-        width: 22px;
-        height: 22px;
-    }
-
-    .footer1 {
-        display: block;
-        margin-left: 20px;
-    }
-
-    .footer1 div h2 {
-        margin: 30px 0 10px;
-    }
+    .countersContainer { font-size: 0.75em; }
 }
 
-@media(width < 500px) {
-    .appointmentContainer1 {
-        justify-content: center;
-        margin: 0;
-    }
-
-    .contactBtn button {
-        width: 50px;
-        height: 30px;
-        font-size: 10px;
-    }
-
-    .navLinks {
-        width: 210px;
-        height: 30px;
-    }
-
-    .navLinks a {
-        font-size: 10px;
-        left: 0;
-        transform: none;
-    }
+@media(width < 600px) {
+    .section1IntroWords h1 { font-size: 2.4em; }
     
-    .mainLogo span {
-        font-size: 15px;
-    }
-
-    .swiper {
-        width: 700px;
-        height: 290px;
-        transform: translateX(-40%);
-    }
-
-    .reviewsContainer {
-        margin-bottom: 3em;
-    }
-
-    .section2Container2 {
-        padding-top: 0em;
-    }
-
-    #section3 {
-        padding-bottom: 3em;
-    }
-
-    .footer li {
-        font-size: 10px;
-    }
-
-    .socialsContainer svg {
-        width: 12x;
-        height: 12px;
-    }
-
-    .socialsContainer svg:hover {
-        transform: scale(120%);
-    }
-
-    .footer3 span {
-        font-size: 6px;
-    }
-
-    .ourStory p {
-        text-align: center;
-    }
-
-    .meetCeo2 p {
-        text-align: center;
-    }
+    .section1IntroWords span { font-size: 0.6em; }
 }
 
 @media(width < 400px) {
-    .countersBorderLast {
-        display: none;
-    }
+    .countersBorderLast { display: none; }
 }
