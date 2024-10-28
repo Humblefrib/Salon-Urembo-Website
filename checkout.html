@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="shortcut icon" href="Images/Salon urembo logo - fav.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script defer src="section2ImageSlider.js"></script>
+        <script defer src="animateOnScroll.js"></script>
+        <!-- <script defer type="module" src="form.js"></script> -->
+        <script defer type="module" src="shoppingCart.js"></script>
+        <script defer src="indexCart.js"></script>
+        <script defer src="bookBtn.js"></script>
+        <script defer src="loadingScreen.js"></script>
+        <script defer src="dropDownMenu.js"></script>
+        <script defer src="checkout.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <title>Salon Urembo | Main Page</title>
+    </head>
+    <body>
+        <div class="loadingScreen">
+            <div class="loader"></div>
+            <img src="Images/Salon urembo logo.png">
+        </div>
+        <nav>
+            <div><a href="index.html"><span>SALON UREMBO</span></a></div>
+            <div class="navLinks">
+                <a href="index.html">Home</a>
+                <a href="shopping.html">Shop</a>
+                <a href="#section8">Products</a>
+                <a href="checkout.html">Checkout</a>
+            </div>
+            <div class="navSvg">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </div>
+            <div class="nav-3" >
+                <div class="icon-cart" title="Cart">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                    </svg>
+                    <span>0</span>
+                </div>
+                <a href="index.html#section6">
+                    <button class="ContactBtn">
+                        <span>Contact</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+                    </button>
+                </a>
+            </div>
+        </nav>
+
+        <div class="dropDownMenu">
+            <div>
+                <a href="index.html">Home</a>
+                <div class="underLine"></div>
+            </div>
+            <div>
+                <a href="shopping.html">Shop</a>
+                <div class="underLine"></div>
+            </div>
+            <div>
+                <a href="#section8">Products</a>
+                <div class="underLine"></div>
+            </div>
+            <div>
+                <a href="#section5">Details</a>
+                <div class="underLine"></div>
+            </div>
+        </div>
+
+        <section id="section9">
+            <div class="sectionHeader sectionHeader2">
+                <span>SEE YOUR SHOPPING</span>
+                <h1>CART</h1>
+                <div class="introLinks introLinks1">
+                    <a href="https://www.instagram.com/_salonurembo?igsh=NmxyNWd5dGFoYWo=" target="_blank"><svg fill="#000" width="24px" height="24px" viewBox="0 0 2476 2476" xmlns="http://www.w3.org/2000/svg"><path d="M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5"/></svg></a>
+                    <a href="https://www.facebook.com/SalonUrembo?mibextid=ZbWKwL" target="_blank"><svg width="24px" height="24px" viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="#eee" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#000"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#176]"></path></g></g></g></svg></a>
+                </div>
+                <div class="introDecoration"></div>
+            </div>
+            <div class="cartContainer">
+                <div class="small-container cart-page">
+                    <table>
+                        <tr>
+                            <th class="table-1">Product</th>
+                            <th>Quantity</th>
+                            <th class="table-3">Subtotal</th>
+                        </tr>
+                        <a class="checkoutBackBtn" href="shopping.html"><button><svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" fill="#e8eaed"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>Back</button></a>
+                        <!-- Cart items added here -->
+                    </table>
+                    <div class="emptyCartNotify"><span>Your Cart Is Empty...</span></div>
+                    <div class="total-price">
+                      <table>
+                        <tr>
+                          <td>Subtotal</td>
+                          <td>R0.00</td>
+                        </tr>
+                        <tr>
+                          <td>Tax</td>
+                          <td>R0.00</td>
+                        </tr>
+                        <tr>
+                          <td>Total</td>
+                          <td>R0.00</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <form class="cartSubmitContainer" action="https://formspree.io/f/xdknjggp" method="POST">
+                        <input type="hidden" name="_subject" value="New Order">
+                        <div>
+                            <h3>Name</h3>
+                            <input type="text" name="Name" placeholder="Name" required>
+                        </div>
+                        <div>
+                            <h3>Phone Number</h3>
+                            <input type="tel" name="Number" placeholder="Phone Number" required>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <input type="email" name="Email" placeholder="Email" required>
+                        </div>
+                        <input id="cartDataInput" class="message" type="hidden" name="Message" placeholder="Write your message here (optional)">
+                        <button type="submit">Submit Request<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-160v-326L336-382l-56-58 200-200 200 200-56 58-104-104v326h-80ZM160-600v-120q0-33 23.5-56.5T240-800h480q33 0 56.5 23.5T800-720v120h-80v-120H240v120h-80Z"/></svg></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <footer id="section5">
+        <div class="footer1">
+            <div>
+                <a href="index.html"><h1>SALON UREMBO</h1></a>
+                <ul>
+                    <li>156 Linden Road</li>
+                    <li>Simba Sandton 2031</li>
+                    <li>Gauteng, Johannesburg</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Navigate</h2>
+                <a href="shopping.html">Shop</a>
+                <a href="#section8">Products</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#section2">Find Us</a>
+                <a href="index.html#section3">About Us</a>
+                <a href="index.html#section4">Services</a>
+                <a href="index.html#section5">Contact</a>
+            </div>
+            <div>
+                <h2>Operational</h2>
+                <li>Weekdays: 08:30 - 17:30</li>
+                <li>Saturdays: 8:00 - 18:00</li>
+                <li>Sundays: 10:00 - 15:00</li>
+                <br>
+                <li>+27 84 677 2911</li>
+                <li>+27 82 826 4510</li>
+                <li>salonurembo1@gmail.com</li>
+            </div>
+        </div>
+        <div class="footer2">
+            <a href="index.html"><img src="Images/Salon urembo logo.png"></a>
+        </div>
+        <div class="footer3">
+            <div>
+                <a href="https://www.instagram.com/_salonurembo?igsh=NmxyNWd5dGFoYWo=" target="_blank"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 2476 2476" xmlns="http://www.w3.org/2000/svg"><path d="M825.4 1238c0-227.9 184.7-412.7 412.6-412.7 227.9 0 412.7 184.8 412.7 412.7 0 227.9-184.8 412.7-412.7 412.7-227.9 0-412.6-184.8-412.6-412.7m-223.1 0c0 351.1 284.6 635.7 635.7 635.7s635.7-284.6 635.7-635.7-284.6-635.7-635.7-635.7S602.3 886.9 602.3 1238m1148-660.9c0 82 66.5 148.6 148.6 148.6 82 0 148.6-66.6 148.6-148.6s-66.5-148.5-148.6-148.5-148.6 66.5-148.6 148.5M737.8 2245.7c-120.7-5.5-186.3-25.6-229.9-42.6-57.8-22.5-99-49.3-142.4-92.6-43.3-43.3-70.2-84.5-92.6-142.3-17-43.6-37.1-109.2-42.6-229.9-6-130.5-7.2-169.7-7.2-500.3s1.3-369.7 7.2-500.3c5.5-120.7 25.7-186.2 42.6-229.9 22.5-57.8 49.3-99 92.6-142.4 43.3-43.3 84.5-70.2 142.4-92.6 43.6-17 109.2-37.1 229.9-42.6 130.5-6 169.7-7.2 500.2-7.2 330.6 0 369.7 1.3 500.3 7.2 120.7 5.5 186.2 25.7 229.9 42.6 57.8 22.4 99 49.3 142.4 92.6 43.3 43.3 70.1 84.6 92.6 142.4 17 43.6 37.1 109.2 42.6 229.9 6 130.6 7.2 169.7 7.2 500.3 0 330.5-1.2 369.7-7.2 500.3-5.5 120.7-25.7 186.3-42.6 229.9-22.5 57.8-49.3 99-92.6 142.3-43.3 43.3-84.6 70.1-142.4 92.6-43.6 17-109.2 37.1-229.9 42.6-130.5 6-169.7 7.2-500.3 7.2-330.5 0-369.7-1.2-500.2-7.2M727.6 7.5c-131.8 6-221.8 26.9-300.5 57.5-81.4 31.6-150.4 74-219.3 142.8C139 276.6 96.6 345.6 65 427.1 34.4 505.8 13.5 595.8 7.5 727.6 1.4 859.6 0 901.8 0 1238s1.4 378.4 7.5 510.4c6 131.8 26.9 221.8 57.5 300.5 31.6 81.4 73.9 150.5 142.8 219.3 68.8 68.8 137.8 111.1 219.3 142.8 78.8 30.6 168.7 51.5 300.5 57.5 132.1 6 174.2 7.5 510.4 7.5 336.3 0 378.4-1.4 510.4-7.5 131.8-6 221.8-26.9 300.5-57.5 81.4-31.7 150.4-74 219.3-142.8 68.8-68.8 111.1-137.9 142.8-219.3 30.6-78.7 51.6-168.7 57.5-300.5 6-132.1 7.4-174.2 7.4-510.4s-1.4-378.4-7.4-510.4c-6-131.8-26.9-221.8-57.5-300.5-31.7-81.4-74-150.4-142.8-219.3C2199.4 139 2130.3 96.6 2049 65c-78.8-30.6-168.8-51.6-300.5-57.5-132-6-174.2-7.5-510.4-7.5-336.3 0-378.4 1.4-510.5 7.5"/></svg></a>
+                <a href="https://www.facebook.com/SalonUrembo?mibextid=ZbWKwL" target="_blank"><svg width="24px" height="24px" viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#000000"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#176]"></path></g></g></g></svg></a>
+            </div>
+            <div><span>2024 Copyright © SALON UREMBO. All Rights Reserved.</span></div>
+        </div>
+    </footer>
+</html>
