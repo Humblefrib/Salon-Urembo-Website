@@ -559,6 +559,8 @@ footer {
 
     .navSvg { display: block; }
 
+    nav div button { display: none; }
+
     .dropDownMenu {
         display: flex;
         flex-direction: column;
@@ -566,4 +568,13 @@ footer {
     }
 
     .dropDownMenu a { font-size: 0.7em; }
+}
+
+@media(width < 650px) {
+    .footer1 {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .footer1 div h2 { margin: 30px 0 10px; }
 }
