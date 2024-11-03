@@ -105,6 +105,8 @@ nav div button {
     padding-left: 10px;
 }
 
+nav div button:hover { transform: scale(108%); }
+
 nav div button span { font-family: var(--headerFont); }
 
 nav div button svg {
@@ -112,8 +114,6 @@ nav div button svg {
     top: 2px;
     left: 67px;
 }
-
-nav div button:hover { transform: scale(108%); }
 
 .navLinks {
     width: 410px;
@@ -142,8 +142,9 @@ nav div button:hover { transform: scale(108%); }
 .navSvg {
     display: none;
     cursor: pointer;
-    fill: white;
 }
+
+.navSvg svg { fill: white; }
 
 .dropDownMenu {
     width: 100%;
@@ -992,6 +993,7 @@ footer {
     border-top: 1px solid rgb(174, 174, 174);
     background-color: rgb(240, 240, 240);
     gap: 50px;
+    overflow-x: hidden;
 }
 
 .footer1 {
@@ -1014,18 +1016,14 @@ footer {
     transition: color 0.3s ease;
 }
 
-.footer1 div:nth-child(2) a:hover {
-    color: var(--accentColour);
-}
-
-.footer1 a[href^="tel:"] { margin-bottom: 4em; }
+.footer1 div:nth-child(2) a:hover { color: var(--accentColour); }
 
 .footer1 div h1 {
     font-family: var(--headerFont);
+    margin-bottom: 30px;
     font-weight: 600;
     font-size: 2em;
     color: var(--accentColour);
-    margin-bottom: 30px;
 }
 
 .footer1 div li {
@@ -1039,17 +1037,6 @@ footer {
     font-size: 0.9em;
     margin-bottom: 30px;
 }
-
-.footer1 a[href^="tel:"] {
-    width: 70px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    animation: exitBtnHover 0.3s ease forwards;
-}
-
-.footer1 a[href^="tel:"]:hover { animation: btnHover 0.3s ease forwards; }
 
 .footer2 {
     width: 100%;
@@ -1131,6 +1118,13 @@ footer {
     .section1IntroWords span { font-size: 0.7em; }
 
     .countersContainer { font-size: 0.75em; }
+
+    .footer1 {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .footer1 div h2 { margin: 30px 0 10px; }
 }
 
 @media(width < 600px) {
