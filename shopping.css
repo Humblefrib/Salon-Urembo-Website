@@ -838,13 +838,11 @@ footer {
 }
 
 @media(width < 700px) {
-    .navLinks {
-        display: none;
-    }
+    .navLinks { display: none; }
 
-    .navSvg {
-        display: block;
-    }
+    .navSvg { display: block; }
+
+    nav div button { display: none; }
 
     .dropDownMenu {
         display: flex;
