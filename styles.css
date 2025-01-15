@@ -7,7 +7,7 @@
     --headerFont: "Teko", sans-serif;
     --headerFontSize: 5em;
     --commonFontSize: 1em;
-    --hudElementZ-Index: 1000;
+    --textColour: rgb(60, 60, 60);
 }
 
 * {
@@ -18,9 +18,13 @@
     text-decoration: none;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
-body.no-scroll { overflow: hidden; }
+body.no-scroll {
+    overflow: hidden;
+}
 
 .loadingScreen {
     width: 100vw;
@@ -87,27 +91,32 @@ nav div h1 {
     font-family: var(--headerFont);
     font-size: 1.5em;
     font-weight: 600;
-    color: rgb(255, 255, 255);
+    color: rgb(208, 208, 208);
     cursor: pointer;
 }
 
 nav div button {
     width: 100px;
     height: 30px;
+    padding-left: 10px;
     position: relative;
-    font-size: 1.2em;
     text-align: start;
+    font-size: 1.2em;
     border: none;
     border-radius: 5px;
     background-color: var(--accentColour);
-    cursor: pointer;
     transition: transform 0.3s ease;
-    padding-left: 10px;
+    cursor: pointer;
 }
 
-nav div button:hover { transform: scale(108%); }
+nav div button:hover {
+    transform: scale(108%);
+}
 
-nav div button span { font-family: var(--headerFont); }
+nav div button span {
+    font-family: var(--headerFont);
+    color: white;
+}
 
 nav div button svg {
     position: absolute;
@@ -125,6 +134,10 @@ nav div button svg {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
+}
+
+.aboutNavLinks {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .navLinks a {
@@ -163,7 +176,9 @@ nav div button svg {
     border-bottom-right-radius: 35%;
 }
 
-.dropDownMenu div { position: relative; }
+.dropDownMenu div {
+    position: relative;
+}
 
 .dropDownMenu a {
     padding: 5px 30px;
@@ -183,14 +198,14 @@ nav div button svg {
     background-color: black;
 }
 
-.dropDownMenu div:hover .underLine{ transform: scaleX(1); }
+.dropDownMenu div:hover .underLine {
+    transform: scaleX(1);
+}
 
 .dropDownMenu.active {
     top: 0px;
     opacity: 1;
 }
-
-.ContactBtn svg { fill: black; }
 
 #section1 {
     width: 100%;
@@ -198,14 +213,16 @@ nav div button svg {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.section1BackgroundImg { position: relative; }
+.section1BackgroundImg {
+    position: relative;
+}
 
 .section1BackgroundImg img {
     width: 100%;
     min-height: 150vh;
     position: absolute;
-    object-fit: cover;
     top: -100px;
+    object-fit: cover;
     user-select: none;
     z-index: -10;
 }
@@ -295,18 +312,17 @@ nav div button svg {
     border: none;
     border-radius: 6px;
     background-color: var(--accentColour);
+    color: white;
     cursor: pointer;
 }
-
-.section1AboutUs button svg { fill: black; }
 
 .section1Cards-1VideoContainer {
     width: 240px;
     height: 150px;
+    margin-left: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1em;
     border: 2px solid white;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -328,7 +344,7 @@ nav div button svg {
 }
 
 .section2Header-1 {
-    margin: 2em 0 4em;
+    margin-bottom: 4em;
     padding: 0 1em;
 }
 
@@ -340,6 +356,7 @@ nav div button svg {
 }
 
 .section2Header-1 p {
+    margin-left: 1em;
     font-size: 0.8em;
     color: white;
 }
@@ -349,13 +366,13 @@ nav div button svg {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-bottom: 5em;
+    margin: 2em 0 3em 0;
 }
 
 .sectionHeader span {
     font-family: var(--headerFont);
-    font-size: 2em;
     margin-bottom: -1em;
+    font-size: 2em;
     color: white;
 }
 
@@ -364,6 +381,28 @@ nav div button svg {
     font-size: 7em;
     font-weight: 500;
     color: white;
+}
+
+.sectionHeader1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 2em 0 3em 0;
+}
+
+.sectionHeader1 span {
+    font-family: var(--headerFont);
+    margin-bottom: -1em;
+    font-size: 2em;
+    color: black;
+}
+
+.sectionHeader1 h1 {
+    font-family: var(--headerFont);
+    font-size: 7em;
+    font-weight: 500;
+    color: black;
 }
 
 .introLinks {
@@ -378,18 +417,20 @@ nav div button svg {
 .introLinks svg:hover { transform: scale(150%); }
 
 .introDecoration {
-    width: 50px;
+    width: 70px;
     height: 5px;
     position: absolute;
     top: 140px;
+    border-radius: 5px;
     transform: translateX(-100px);
     background-color: var(--accentColour);
 }
 
 .section2-1 {
+    padding: 0 1em;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
-    padding: 0 1em;
     gap: 10px;
 }
 
@@ -470,9 +511,9 @@ nav div button svg {
     padding: 10px;
 }
 
-.sectionHeader1 span, .sectionHeader1 h1 { color: black; }
-
-.ourStoryContainer, .mission, .meetCeoContainer { padding-bottom: 1em; }
+.ourStoryContainer, .mission, .meetCeoContainer {
+    padding-bottom: 1em;
+}
 
 .ourStory {
     display: flex;
@@ -481,7 +522,9 @@ nav div button svg {
     align-items: center;
 }
 
-.ourStory p { max-width: 400px; }
+.ourStory p {
+    max-width: 400px;
+}
 
 .mission h2 {
     text-align: center;
@@ -619,7 +662,6 @@ nav div button svg {
 }
 
 #section4 {
-    min-height: 100vh;
     padding-bottom: 5em;
     background-color: #ffeac5;
     overflow: hidden;
@@ -627,212 +669,194 @@ nav div button svg {
 }
 
 .section4Container1 {
-    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: -3em 0 6em 0;
-}
-
-.section4ContainerLeft {
-    width: 340px;
-    height: 410px;
-    margin: 1.5em 1em 0 0;
-    padding: 10px 0 10px 1em;
-    background-color: #ffeac5;
-    z-index: 10;
+    margin: -3em 0 3em 0;
 }
 
 .section4ContainerLeft1 {
-    width: 230px;
+    width: max-content;
     font-size: 3.5em;
     font-weight: 500;
     color: black;
 }
 
-.section4ContainerLeft1 span { font-family: var(--headerFont); }
+.section4ContainerLeft1 h2 {
+    font-family: var(--headerFont);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.section4ContainerLeft {
+    margin-left: 1em;
+    padding: 0 1em;
+    background-color: #ffeac5;
+    z-index: 10;
+}
 
 .section4ContainerLeft2 {
+    margin-left: 1em;
     font-size: 1em;
-    padding-top: 2em;
 }
 
-.appointmentBtn {
-    width: 120px;
+.section4Cards {
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.section4Card {
+    width: 280px;
+    height: 450px;
+    margin: 1em;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    margin-top: 2em;
-    padding: 5px;
+    border: 4px solid white;
     border-radius: 10px;
-    background-color: var(--accentColour);
-    color: black;
+    background-color: rgba(255, 255, 255, 0.4);
+    gap: 10px;
 }
 
-.appointmentBtn span { font-family: var(--headerFont); }
-
-.appointmentBtn svg {
-    margin-left: 10px;
-    transform: translateY(5px);
-    fill: black;
-}
-
-.appointmentBtn button {
-    width: 100px;
-    padding: 11px 10px 15px 0px;
+.section4CardImg {
+    width: 85%;
+    height: 200px;
     position: relative;
-    border: none;
-    border-radius: 5px;
-    font-size: 10px;
-    background-color: var(--secondaryAccentColour);
-    animation: exitBtnHover 0.3s ease forwards;
-    cursor: pointer;
+    border: 4px solid white;
+    border-radius: 15px;
 }
 
-.appointmentBtn button:hover {
-    background-color: var(--accentColour);
-    animation: btnHover 0.3s ease forwards;
+.section4CardImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.imgSlider {
-    width: 450px;
-    height: 350px;
-    margin-top: 6em;
-}
-
-.swiper {
-    width: 1000px;
-    height: 350px;
-    transform: translateX(-30%);
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+.section4CardImgSvg {
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 999;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    user-select: none;
+.section4CardContent {
+    padding: 0 1em;
 }
 
-.swiper-slide img {
+.section4CardContent h4 {
+    width: max-content;
+    margin-top: -2em;
+    margin-bottom: 1em;
+    padding: 3px 15px;
+    text-align: center;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background-color: var(--accentColour);
+    color: white;
+}
+
+.section4CardContent p {
+    margin: 0.3em 0 1em 1em;
+    font-size: 0.8em;
+    color: var(--textColour);
+}
+
+.section4CardContent a {
+    font-family: var(--headerFont);
+    padding: 3px 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    letter-spacing: 0.8px;
+    background-color: var(--accentColour);
+    color: white;
+}
+
+.slider {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 300px;
+    padding: 1em 0;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%), transparent;
+}
+
+.slider .list {
+    width: 100%;
+    min-width: calc(300px * var(--quantity));
+    display: flex;
+    position: relative;
+}
+
+.slider .list .item {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 100%;
+    border: 5px solid white;
     border-radius: 15px;
-    user-select: none;
-    cursor: grab;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+    transition: filter 0.5s;
+}
+
+.slider .list .item img {
+    width: 90%;
+    height: 90%;
+    border: 4px solid white;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.slider:hover .item {
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
 }
 
 .section4Container2 {
     width: 100%;
     min-height: 300px;
+    margin-top: 4em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 4em;
 }
-
-.reviewsContainer {
-    width: 300px;
-    min-height: 150px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    overflow: hidden;
-    background-color: var(--accentColour);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.reviewHeader h2 {
-    font-family: var(--headerFont);
-    margin-top: 0.5em;
-    font-size: 2.2em;
-    font-weight: 500;
-}
-
-.quote {
-    width: 90%;
-    margin: 0 10px;
-    position: absolute;
-    left: 100%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    opacity: 0;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-.quote.active {
-    left: 0;
-    transform: translateX(0) translateY(-50%);
-    opacity: 1;
-}
-
-.quote.prev-active {
-    left: -100%;
-    transform: translateX(0) translateY(-50%);
-    opacity: 1;
-}
-
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-}
-
-.navButtons {
-    width: 80px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-button {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 50%;
-    user-select: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.nav-button svg { fill: black; }
-
-.nav-button:hover { background-color: rgba(255, 255, 255, 0.5); }
-
-.counter { font-size: 1.3em; }
 
 .priceList {
     font-family: var(--commonFont);
-    width: 300px;
+    width: 100%;
     min-height: 300px;
-    margin-top: 6em; 
+    margin: 0 2em;
+    padding: 1.5em 2em 0 2em;
+    border: 4px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .priceListHeader {
-    width: 350px;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    color: black;
+    gap: 15px;
 }
 
 .priceListHeader h2 {
@@ -842,10 +866,10 @@ nav div button svg {
 }
 
 .priceListHeader a {
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     text-decoration: none;
-    margin-bottom: 5px;
 }
 
 .priceListHeader button {
@@ -860,128 +884,203 @@ nav div button svg {
     border-radius: 8px;
     font-size: 1.2em;
     font-weight: 500;
-    transition: transform 0.3s ease;
     background-color: var(--accentColour);
+    color: white;
+    transition: transform 0.3s ease;
 }
 
-.priceListHeader button svg { fill: black; }
+.priceListHeader button svg {
+    fill: white;
+}
 
 .priceListHeader button:hover {
-    cursor: pointer;
     background-color: var(--accentColour);
     transform: scale(105%);
+    cursor: pointer;
 }
-
-.priceContainer:last-child { text-align: center; }
 
 .priceRow {
+    padding: 1em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    border-bottom: 1px solid rgb(138, 138, 138);
+    border-bottom: 1px solid;
 }
 
-.priceRow:last-child { border: none; }
+.priceRow:last-child {
+    padding-bottom: 2em;
+    border: none;
+}
 
-#section5 { background-color: rgb(240, 240, 240); }
+.priceRow span {
+    width: 100px;
+    text-align: end;
+    font-weight: 500;
+}
 
-.sectionHeader2 { padding-top: 3em; }
+.priceRow p {
+    width: 70%;
+    margin: 0.8em 0 0 3em;
+    font-size: 0.8em;
+    color: var(--textColour);
+}
 
-.sectionHeader2 h1 {
-    font-size: 4.7em;
+#section7 {
+    padding-bottom: 5em;
+    background-color: #ffeac5;
+}
+
+.section7Container {
+    width: 95%;
+    height: 200px;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    border: 4px solid white;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.section7Container h2 {
+    font-family: var(--headerFont);
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-left: 1em;
+}
+
+.section7Container p {
+    padding-left: 4em;
+    font-size: 0.8em;
+    color: var(--textColour);
+}
+
+.section7Container a {
+    font-family: var(--headerFont);
+    width: 130px;
+    height: 46px;
+    margin-left: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: var(--accentColour);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.section7Container a:hover {
+    transform: scale(110%);
+}
+
+.section7Container a svg {
+    transition: fill 0.3s ease-in-out;
+}
+
+#section5 h2 {
     color: black;
 }
 
-.sectionHeader2 span { color: black; }
+.section5PageHeader {
+    display: flex;
+    justify-content: center;
+}
 
-.sectionHeader2 svg { margin-top: 15px; }
-
-.introDecoration2 {
-    width: 50px;
-    height: 5px;
-    position: absolute;
-    top: 150px;
-    transform: translateX(-100px);
-    background-color: var(--accentColour);
+.section5PageHeader h1 {
+    text-align: center;
+    font-size: 3em;
+    color: black;
 }
 
 .section5FormContainer {
-    width: 100%;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .section5FormContainer h2 {
-    font-family: var(--headerFont);
-    font-size: 2em;
-    font-weight: 500;
+    margin-top: 0.5em;
 }
 
 .section5FormContainer form div {
-    display: flex;
-    flex-direction: column;
     margin-top: 1.5em;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.section5FormContainer form div input {
-    height: 40px;
-    padding-left: 1em;
-    border: 1px solid;
-    border-radius: 7px;
-    background-color: rgb(240, 240, 240);
+.section5FormContainer form div input, textarea {
+    width: 70vw;
+    height: 45px;
+    padding-left: 1.2em;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: var(--textColour);
+}
+
+textarea {
+    height: 100px;
+    padding-top: 1em;
 }
 
 .section5FormContainer form div button {
     font-family: var(--headerFont);
-    height: 40px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: 7px;
-    background-color: var(--accentColour);
-}
-
-.section5FormContainer form div button span {
-    font-family: var(--headerFont);
+    border-radius: 5px;
     font-size: 1.5em;
+    letter-spacing: 1px;
+    background-color: var(--accentColour);
+    color: white;
 }
 
-.section5FormContainer form div button svg { fill: black; }
-
-.section5FormContainer p {
-    margin-top: 1em;
-    padding: 0 10px;
-    text-align: center;
+.section5FormContainer h3 {
+    width: max-content;
+    margin-left: 0.7em;
+    padding: 0.2em;
+    transform: translateY(15px);
+    background-color: white;
+    z-index: 999;
 }
 
-.section5CallContainer {
-    width: 100%;
+.section2CallContainer {
+    margin: 2em 0 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2em 0 0 0;
-    padding-bottom: 3em;
 }
 
-.section5CallContainer h2 {
-    font-family: var(--headerFont);
-    font-size: 2em;
-    font-weight: 500;
+.section2CallContainer h2 {
+    margin: 1em 0;
 }
 
-.section5CallContainer a {
+.section2CallContainer a {
     font-family: var(--headerFont);
-    border: none;
+    width: 100px;
     margin-top: 1em;
-    padding: 10px 30px;
-    border-radius: 10px;
-    font-size: 1.3em;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1.2em;
     background-color: var(--accentColour);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.section2CallContainer a:hover {
+    transform: scale(105%);
 }
 
 footer {
@@ -991,7 +1090,6 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     border-top: 1px solid rgb(174, 174, 174);
-    background-color: rgb(240, 240, 240);
     gap: 50px;
     overflow-x: hidden;
 }
@@ -1033,9 +1131,10 @@ footer {
 
 .footer1 div h2 {
     font-family: var(--headerFont);
-    font-weight: 500;
-    font-size: 0.9em;
     margin-bottom: 30px;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .footer2 {
@@ -1050,7 +1149,9 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.footer2 img:hover { transform: scale(105%); }
+.footer2 img:hover {
+    transform: scale(105%);
+}
 
 .footer3 {
     width: 100%;
@@ -1059,15 +1160,28 @@ footer {
     align-items: end;
     margin-bottom: 5px;
 }
-
 .footer3 svg {
     margin: 10px 10px 0 10px;
     transition: transform 0.3s ease;
 }
 
-.footer3 svg:hover { transform: scale(150%); }
+.footer3 svg:hover {
+    transform: scale(150%);
+}
 
-.footer3 span { font-size: 0.6em; }
+.footer3 span {
+    margin-right: 3em;
+    font-size: 0.6em;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
 
 @media(width > 1000px) {
     .section1BackgroundImg img { top: -250px; }
@@ -1131,6 +1245,108 @@ footer {
     .section1IntroWords h1 { font-size: 2.4em; }
     
     .section1IntroWords span { font-size: 0.6em; }
+}
+
+@media(width < 500px) {
+    .section4ContainerLeft1 h2 {
+        font-size: 0.6em;
+    }
+
+    .section4ContainerLeft2 {
+        font-size: 0.8em;
+        color: var(--textColour);
+    }
+
+    .section4Card {
+        width: 250px;
+        height: 400px;
+    }
+
+    .slider {
+        height: 200px;
+    }
+    
+    .slider .list {
+        min-width: calc(200px * var(--quantity));
+    }
+    
+    .slider .list .item {
+        width: 200px;
+        height: 200px;
+    }
+
+    .priceListHeader h2 {
+        font-size: 1.4em;
+    }
+
+    .priceListHeader button {
+        width: 135px;
+        height: 30px;
+        font-size: 1em;
+    }
+
+    .priceRow p {
+        display: none;
+    }
+
+    .priceRow span {
+        width: max-content;
+    }
+
+    .section7Container {
+        width: 95%;
+        height: 150px;
+    }
+
+    .section7Container h2 {
+        font-size: 1.6em;
+        letter-spacing: 0px;
+    }
+
+    .section7Container p {
+        padding-left: 3em;
+        font-size: 0.8em;
+    }
+    
+    .section7Container a {
+        width: 120px;
+        height: 35px;
+        margin-left: 2em;
+        font-size: 1.2em;
+        letter-spacing: 0.5px;
+    }
+
+    .sectionHeader1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 2em 0 3em 0;
+    }
+    
+    .sectionHeader1 span {
+        font-family: var(--headerFont);
+        margin-bottom: -1em;
+        font-size: 1.5em;
+    }
+    
+    .sectionHeader1 h1 {
+        font-family: var(--headerFont);
+        font-size: 5em;
+        font-weight: 500;
+    }
+
+    .sectionHeader1 .introLinks1 {
+        margin-top: 1em;
+    }
+
+    .sectionHeader1 .introDecoration {
+        margin-top: -2em;
+    }
+
+    .section5FormContainer h2 {
+        margin-top: -1em;
+    }
 }
 
 @media(width < 400px) {
