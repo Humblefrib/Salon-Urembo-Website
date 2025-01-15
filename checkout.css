@@ -97,7 +97,7 @@ nav svg { fill: white; }
 .navLinks {
     height: 35px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     border: 2px solid white;
     border-radius: 5px;
@@ -181,7 +181,6 @@ nav div button {
 
 nav div button span {
     font-weight: 400;
-    color: black;
 }
 
 nav div button svg {
@@ -237,8 +236,6 @@ nav div button:hover { transform: scale(108%); }
     opacity: 1;
 }
 
-.ContactBtn svg { fill: black; }
-
 #section9 {
     padding-top: 8em;
     background-color: #ECE1CD;
@@ -280,6 +277,7 @@ nav div button:hover { transform: scale(108%); }
     height: 5px;
     position: absolute;
     top: 140px;
+    border-radius: 5px;
     transform: translateX(-100px);
     background-color: var(--accentColour);
 }
@@ -312,8 +310,6 @@ table {
     border-radius: 5px;
     cursor: pointer;
 }
-
-.checkoutBackBtn button svg { fill: black; }
 
 .cart-info {
     display: flex;
