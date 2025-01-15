@@ -111,7 +111,7 @@ nav svg { fill: white; }
 .navLinks {
     height: 35px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     border: 2px solid white;
     border-radius: 5px;
@@ -257,7 +257,9 @@ nav div button:hover {
     opacity: 1;
 }
 
-.ContactBtn svg { fill: black; }
+.ContactBtn span {
+    color: white;
+}
 
 #section7 {
     width: 100vw;
@@ -439,6 +441,7 @@ nav div button:hover {
     height: 5px;
     position: absolute;
     top: 140px;
+    border-radius: 5px;
     transform: translateX(-100px);
     background-color: var(--accentColour);
 }
@@ -479,15 +482,16 @@ header {
     filter: drop-shadow(0 50px 20px #0009);
 }
 
-.listProduct .item{
-    background-color: rgb(235, 235, 235);
+.listProduct .item {
     padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.4s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
 }
 
 .listProduct .item:hover {
